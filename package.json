@@ -1,0 +1,37 @@
+{
+    "name": "flex-cli",
+    "version": "1.0.0",
+    "type": "commonjs",
+    "scripts": {
+        "build": "ncc build src/*.ts -o build",
+        "stale-pull-request": "ncc run src/main.ts",
+        "lint": "eslint --ext=ts src",
+        "lint:fix": "eslint --ext=ts src --fix",
+        "prettier:write": "prettier --write .",
+        "prettier:check": "prettier --check .",
+        "format": "npm run lint:fix && npm run prettier:write"
+    },
+    "dependencies": {
+        "@octokit/rest": "^19.0.11",
+        "dotenv": "^16.3.1"
+    },
+    "devDependencies": {
+        "@navikt/eslint-config-teamsykmelding": "3.0.0",
+        "@types/node": "^20.5.0",
+        "@vercel/ncc": "^0.36.1",
+        "eslint": "^8.46.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "prettier": "3.0.0",
+        "typescript": "^5.1.6"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@navikt/eslint-config-teamsykmelding"
+        ],
+        "rules": {
+            "react/jsx-curly-brace-presence": "off",
+            "no-console": "off"
+        }
+    },
+    "prettier": "@navikt/eslint-config-teamsykmelding/prettier"
+}
