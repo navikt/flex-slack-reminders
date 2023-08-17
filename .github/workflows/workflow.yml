@@ -1,4 +1,4 @@
-name: Push
+name: Bygg og lint
 on:
   workflow_dispatch:
   push:
