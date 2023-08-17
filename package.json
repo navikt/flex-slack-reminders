@@ -4,7 +4,7 @@
     "type": "commonjs",
     "scripts": {
         "build": "ncc build src/*.ts -o build",
-        "stale-pull-request": "ncc run src/main.ts",
+        "stale-pull-request": "ncc run src/stale-pull-request.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",
