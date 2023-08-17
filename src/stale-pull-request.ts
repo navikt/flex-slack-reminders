@@ -1,9 +1,13 @@
+import * as dayjs from 'dayjs'
+
 import { octokit } from '../octokit'
 
 import { hentRepoer } from './common/hentRepoer'
+
 console.log('Sjekker for gamle pullrequests')
 
 const repoer = hentRepoer()
+const antallDager = 8
 
 for (const repo of repoer) {
     console.log(repo)
@@ -11,7 +15,8 @@ for (const repo of repoer) {
         owner: 'navikt',
         repo: repo,
     })
-    pulls.data.map((pull) => {
-        console.log(pull.title)
+    const gamle = pulls.data.filter((pull) => dayjs().diff(dayjs(pull.created_at), 'day') > antallDager)
+    gamle.forEach((pull) => {
+        console.log(`${pull.title} ${pull.html_url}`)
     })
 }
