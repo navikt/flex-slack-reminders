@@ -1,10 +1,15 @@
-import { config } from 'dotenv'
+import {config} from 'dotenv'
+import * as fs from "fs";
 
 config()
-if (!process.env.GITHUB_PAT) {
-    throw Error('Missing env GITHUB_PAT')
+if (!process.env.GITHUB_TOKEN) {
+    throw Error('Missing env GITHUB_TOKEN')
 }
 
 console.log('Sjekker for gamle pullrequests')
 
-console.log(process.env.GITHUB_PAT)
+const file = fs.readFileSync('./repos.txt', 'utf8') as string
+file.split('\n').forEach((line) => {
+    if(line)
+    console.log("repo: " + line)
+})

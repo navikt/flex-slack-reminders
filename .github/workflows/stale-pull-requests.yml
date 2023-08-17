@@ -1,0 +1,23 @@
+name: Push
+on:
+  workflow_dispatch:
+jobs:
+  staale-pull-requests:
+    name: Stale pull requests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: gh search repos archived:false --topic=team-flex --owner=navikt --limit=200 --json "name" --jq ".[] | .name" >> repos.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.READER_TOKEN }}
+      - run: npm run stale-pull-request
+        env:
+          GITHUB_TOKEN: ${{ secrets.READER_TOKEN }}
