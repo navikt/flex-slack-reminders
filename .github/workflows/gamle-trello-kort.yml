@@ -1,11 +1,10 @@
-name: Stale pull requests
+name: Gamle trello kort
 on:
   workflow_dispatch:
   schedule:
     - cron: '0,3 7 * * 1'
 jobs:
-  stale-pull-requests:
-    name: Stale pull requests
+  gamle-trello-kort:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
