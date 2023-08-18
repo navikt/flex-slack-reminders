@@ -5,6 +5,7 @@
     "scripts": {
         "build-stale-pull-request": "ncc build src/stale-pull-request.ts -o build",
         "stale-pull-request": "ncc run src/stale-pull-request.ts",
+        "security-advisories": "ncc run src/security-advisories.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",
