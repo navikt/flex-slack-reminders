@@ -1,6 +1,8 @@
 name: Stale pull requests
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * 1'
 jobs:
   stale-pull-requests:
     name: Stale pull requests
@@ -21,3 +23,4 @@ jobs:
       - run: npm run stale-pull-request
         env:
           GITHUB_TOKEN: ${{ secrets.READER_TOKEN }}
+          FLEX_DEV_WEBHOOK: ${{ secrets.FLEX_DEV_WEBHOOK }}
