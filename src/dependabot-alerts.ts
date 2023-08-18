@@ -8,6 +8,7 @@ import { numberToSlackEmoji } from './common/numberToEmoji'
 const repoer = hentRepoer()
 
 for (const repo of repoer) {
+    console.log('Henter for repo ' + repo)
     const dependabotAlerts = await octokit.request('GET /repos/{owner}/{repo}/dependabot/alerts', {
         owner: 'navikt',
         repo: repo,
