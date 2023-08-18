@@ -17,11 +17,8 @@ jobs:
         run: npm ci
         env:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run prettier
-        run: npm run prettier:check
-      - name: Run lint
-        run: npm run lint
-      - name: Build stale-pull-request
-        run: npm run build-stale-pull-request
-      - name: Build dependabot-alerts
-        run: npm run build-dependabot-alerts
+      - run: npm run prettier:check
+      - run: npm run lint
+      - run: npm run build-stale-pull-request
+      - run: npm run build-dependabot-alerts
+      - run: npm run build-gamle-trello-kort

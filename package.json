@@ -5,8 +5,10 @@
     "scripts": {
         "build-stale-pull-request": "ncc build src/stale-pull-request.ts -o build",
         "build-dependabot-alerts": "ncc build src/dependabot-alerts.ts -o build",
+        "build-gamle-trello-kort": "ncc build src/gamle-trello-kort.ts -o build",
         "stale-pull-request": "ncc run src/stale-pull-request.ts",
         "dependabot-alerts": "ncc run src/dependabot-alerts.ts",
+        "gamle-trello-kort": "ncc run src/gamle-trello-kort.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",
