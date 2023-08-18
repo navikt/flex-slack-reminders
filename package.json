@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "commonjs",
     "scripts": {
-        "build": "ncc build src/*.ts -o build",
+        "build-stale-pull-request": "ncc build src/stale-pull-request.ts -o build",
         "stale-pull-request": "ncc run src/stale-pull-request.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
