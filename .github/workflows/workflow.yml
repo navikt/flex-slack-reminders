@@ -23,3 +23,5 @@ jobs:
         run: npm run lint
       - name: Build stale-pull-request
         run: npm run build-stale-pull-request
+      - name: Build dependabot-alerts
+        run: npm run build-dependabot-alerts

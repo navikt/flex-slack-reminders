@@ -4,7 +4,9 @@
     "type": "commonjs",
     "scripts": {
         "build-stale-pull-request": "ncc build src/stale-pull-request.ts -o build",
+        "build-dependabot-alerts": "ncc build src/dependabot-alerts.ts -o build",
         "stale-pull-request": "ncc run src/stale-pull-request.ts",
+        "dependabot-alerts": "ncc run src/dependabot-alerts.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",

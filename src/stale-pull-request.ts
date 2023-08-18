@@ -4,6 +4,7 @@ import * as dayjs from 'dayjs'
 import { octokit } from './octokit'
 import { hentRepoer } from './common/hentRepoer'
 import { sendSlackMessage } from './common/slackPosting'
+import { numberToSlackEmoji } from './common/numberToEmoji'
 
 const repoer = hentRepoer()
 const antallDager = 7
@@ -59,32 +60,5 @@ Vi bør merge eller lukke disse`,
 
         await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
         console.log(`Sendte til slack for repo '${repo}'`)
-    }
-}
-
-function numberToSlackEmoji(n: number): string {
-    switch (n) {
-        case 1:
-            return ':one:'
-        case 2:
-            return ':two:'
-        case 3:
-            return ':three:'
-        case 4:
-            return ':four:'
-        case 5:
-            return ':five:'
-        case 6:
-            return ':six:'
-        case 7:
-            return ':seven:'
-        case 8:
-            return ':eight:'
-        case 9:
-            return ':nine:'
-        case 10:
-            return ':keycap_ten:'
-        default:
-            return `${n} `
     }
 }
