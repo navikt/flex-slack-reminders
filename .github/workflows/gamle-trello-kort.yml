@@ -2,7 +2,7 @@ name: Gamle trello kort
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0,3 7 * * 1'
+    - cron: '55 8 * * 1,3'
 jobs:
   gamle-trello-kort:
     runs-on: ubuntu-latest
