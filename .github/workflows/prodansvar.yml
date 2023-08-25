@@ -1,11 +1,11 @@
-name: dependabot-alerts
+name: prodansvar
 on:
   workflow_dispatch:
   schedule:
     - cron: '30 6 * * 1'
 jobs:
-  stale-pull-requests:
-    name: dependabot-alerts
+  prodansvar:
+    name: prodansvar
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
