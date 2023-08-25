@@ -1,0 +1,22 @@
+name: dependabot-alerts
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * 1'
+jobs:
+  stale-pull-requests:
+    name: dependabot-alerts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run prodansvar
+        env:
+          FLEX_DEV_WEBHOOK: ${{ secrets.FLEX_DEV_WEBHOOK }}
