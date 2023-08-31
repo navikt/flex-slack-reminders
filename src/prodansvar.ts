@@ -2,14 +2,7 @@ import './common/configInit'
 import * as dayjs from 'dayjs'
 
 import { sendSlackMessage } from './common/slackPosting'
-
-const prodansvarlige = [
-    { initialer: 'HSA', memberId: 'UPU6U4H9R' },
-    { initialer: 'BIK', memberId: 'UMWEVMRM4' },
-    { initialer: 'NJM', memberId: 'U02AM04QV96' },
-    { initialer: 'ØK', memberId: 'U021UJDDMHB' },
-    { initialer: 'GB', memberId: 'U0124V94CLR' },
-]
+import { prodansvarlige } from './common/teammedlemmer'
 
 const startDate = dayjs('2023-08-07')
 const currentDate = dayjs()

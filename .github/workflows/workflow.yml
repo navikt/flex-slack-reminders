@@ -23,3 +23,4 @@ jobs:
       - run: npm run build-dependabot-alerts
       - run: npm run build-gamle-trello-kort
       - run: npm run build-prodansvar
+      - run: npm run build-flexjaransvar
