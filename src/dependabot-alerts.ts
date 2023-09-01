@@ -6,6 +6,7 @@ import { sendSlackMessage } from './common/slackPosting'
 import { numberToSlackEmoji } from './common/numberToEmoji'
 
 const repoer = hentRepoer()
+let fantAlert = false
 
 for (const repo of repoer) {
     console.log('Henter for repo ' + repo)
@@ -16,6 +17,7 @@ for (const repo of repoer) {
     })
 
     if (dependabotAlerts.data.length > 0) {
+        fantAlert = true
         // eslint-disable-next-line
         const blocks = [] as any[]
         blocks.push({ type: 'divider' })
@@ -42,4 +44,18 @@ Vi bør fikse eller lukke disse`,
         await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
         console.log(`Sendte til slack for repo '${repo}'`)
     }
+}
+
+if (!fantAlert) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const blocks = [] as any[]
+    blocks.push({
+        type: 'section',
+        text: {
+            type: 'mrkdwn',
+            text: `:godstolen: *Ingen dependabot alerts i noen av repoene våre* :tada: `,
+        },
+    })
+
+    await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
 }
