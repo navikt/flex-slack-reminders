@@ -45,4 +45,4 @@ Det er <@${ansvarlig.memberId}> som har flexjar ansvar denne uka.`,
     },
 )
 
-await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
+await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
