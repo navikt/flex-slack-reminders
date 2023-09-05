@@ -4,8 +4,6 @@ import * as dayjs from 'dayjs'
 import { sendSlackMessage } from './common/slackPosting'
 import { retroListe } from './common/trelloRetroListe'
 
-const sendImmediately = true
-
 const startDate = dayjs('2023-09-05')
 const currentDate = dayjs()
 const weeksSinceStart = currentDate.diff(startDate, 'week')
@@ -24,6 +22,6 @@ const blocks = [
     },
 ]
 
-if (sendImmediately || currentWeekNumber % 4 === 0) {
+if (currentWeekNumber % 4 === 0) {
     await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
 }
