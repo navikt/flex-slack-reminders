@@ -12,8 +12,8 @@ const weeksSinceStart = currentDate.diff(startDate, 'week')
 const currentWeekNumber = 36 + weeksSinceStart
 
 const retroBoardLink = `https://trello.com/b/${retroListe[currentWeekNumber % retroListe.length]}`
-const webhookUrl = process.env.FLEXINTERNAL_WEBHOOK!
 
+console.log(`Retro board er: ${retroBoardLink}`)
 const blocks = [
     {
         type: 'section',
@@ -25,5 +25,5 @@ const blocks = [
 ]
 
 if (sendImmediately || currentWeekNumber % 4 === 0) {
-    await sendSlackMessage(webhookUrl, { blocks })
+    await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
 }
