@@ -1,0 +1,22 @@
+name: retro-rullering
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 6 * * 5'
+jobs:
+  retro-rullering:
+    name: retro-rullering
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run retro-rullering
+        env:
+          FLEXINTERNAL_WEBHOOK: ${{ secrets.FLEXINTERNAL_WEBHOOK }}
