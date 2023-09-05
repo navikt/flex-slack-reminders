@@ -4,15 +4,14 @@ import * as dayjs from 'dayjs'
 import { sendSlackMessage } from './common/slackPosting'
 import { retroListe } from './common/trelloRetroListe'
 
-const startDate = dayjs('2023-09-04').startOf('week')
+const sendImmediately = true
+
+const startDate = dayjs('2023-09-05')
 const currentDate = dayjs()
 const weeksSinceStart = currentDate.diff(startDate, 'week')
+const currentWeekNumber = 36 + weeksSinceStart
 
-const retroBoardLink = `https://trello.com/b/${retroListe[weeksSinceStart % retroListe.length]}`
-
-const isFriday = currentDate.day() === 5
-const currentHour = currentDate.hour()
-
+const retroBoardLink = `https://trello.com/b/${retroListe[currentWeekNumber % retroListe.length]}`
 const webhookUrl = process.env.FLEXINTERNAL_WEBHOOK!
 
 const blocks = [
@@ -25,7 +24,6 @@ const blocks = [
     },
 ]
 
-// Check if the current day is Friday, the current hour is 09, and it has been 4 weeks since the start date
-if (isFriday && currentHour === 9 && weeksSinceStart % 4 === 0) {
+if (sendImmediately || currentWeekNumber % 4 === 0) {
     await sendSlackMessage(webhookUrl, { blocks })
 }
