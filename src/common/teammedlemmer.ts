@@ -7,7 +7,7 @@ export const prodansvarlige = [
 ]
 
 export const flexjaransvarlige = [
-    { initialer: 'MG', memberId: 'UJW0A57FD' },
     ...prodansvarlige.reverse(),
     { initialer: 'PB', memberId: 'UE89E1WTY' },
+    { initialer: 'MG', memberId: 'UJW0A57FD' },
 ]
