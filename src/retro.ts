@@ -4,10 +4,10 @@ import * as dayjs from 'dayjs'
 import { sendSlackMessage } from './common/slackPosting'
 import { retroListe } from './common/trelloRetroListe'
 
-const startDate = dayjs('2023-09-05')
+const startDate = dayjs('2023-09-29')
 const currentDate = dayjs()
 const weeksSinceStart = currentDate.diff(startDate, 'week')
-const currentWeekNumber = 36 + weeksSinceStart
+const currentWeekNumber = 39 + weeksSinceStart
 
 const retroBoardLink = `https://trello.com/b/${retroListe[currentWeekNumber % retroListe.length]}`
 
