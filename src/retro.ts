@@ -24,4 +24,6 @@ const blocks = [
 
 if (currentWeekNumber % 4 === 0) {
     await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
+} else {
+    console.log('Ikke tid for retro fordi ukenummer ikke er delelig med 4')
 }
