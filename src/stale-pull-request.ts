@@ -13,11 +13,13 @@ const blocks = [] as any[]
 
 for (const repo of repoer) {
     console.log(`Sjekker repo '${repo}'`)
-    const pulls = await octokit.request('GET /repos/{owner}/{repo}/pulls', {
-        owner: 'navikt',
-        repo: repo,
-    })
-    const gamle = pulls.data.filter((pull) => dayjs().diff(dayjs(pull.created_at), 'day') > antallDager)
+    const pulls = (
+        await octokit.request('GET /repos/{owner}/{repo}/pulls', {
+            owner: 'navikt',
+            repo: repo,
+        })
+    ).data.filter((pull) => !pull.draft)
+    const gamle = pulls.filter((pull) => dayjs().diff(dayjs(pull.created_at), 'day') > antallDager)
     if (gamle.length > 0) {
         blocks.push({
             type: 'section',
@@ -26,7 +28,7 @@ for (const repo of repoer) {
                 text: `
 
 :warning: * <https://www.github.com/navikt/${repo}|${repo}>*
-Har totalt <https://www.github.com/navikt/${repo}/pulls|${pulls.data.length} pull requests>. ${gamle.length} av dem er eldre enn ${antallDager} dager.
+Har totalt <https://www.github.com/navikt/${repo}/pulls|${pulls.length} pull requests>. ${gamle.length} av dem er eldre enn ${antallDager} dager.
 Vi bør merge eller lukke disse`,
             },
         })
@@ -73,8 +75,24 @@ const chunkedBlocks = blocks.reduce((resultArray, item, index) => {
     return resultArray
 }, [])
 
+let sent = false
 // post chunked blocks to slack
 for (const blocks of chunkedBlocks) {
     const res = await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
     console.log(`Sendte til slack: ${res}'`)
+    sent = true
+}
+
+if (!sent) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const blocks = [] as any[]
+    blocks.push({
+        type: 'section',
+        text: {
+            type: 'mrkdwn',
+            text: `:godstolen: *Ingen gamle pullrequests i noen av repoene våre* :tada: `,
+        },
+    })
+
+    await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
 }
