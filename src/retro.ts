@@ -22,8 +22,11 @@ const blocks = [
     },
 ]
 
-if (currentWeekNumber % 4 === 0) {
+const ukeAdjustment = 1
+
+if ((currentWeekNumber + ukeAdjustment) % 4 === 0) {
+    console.log('Tid for retro')
     await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
 } else {
-    console.log('Ikke tid for retro fordi ukenummer ikke er delelig med 4')
+    console.log(`Ikke tid for retro fordi ukenummer pluss ${ukeAdjustment} ikke er delelig med 4`)
 }
