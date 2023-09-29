@@ -2,7 +2,7 @@ name: retro-rullering
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 6 * * 5'
+    - cron: '35 9 * * 5'
 jobs:
   retro-rullering:
     name: retro-rullering
