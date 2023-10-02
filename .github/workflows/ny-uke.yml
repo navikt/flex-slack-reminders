@@ -1,8 +1,8 @@
-name: Gamle trello kort
+name: ny uke
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 6 * * 1'
+    - cron: '30 6 * * 1'
 jobs:
   ny-uke:
     runs-on: ubuntu-latest
