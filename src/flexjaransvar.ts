@@ -1,15 +1,9 @@
 import './common/configInit'
-import * as dayjs from 'dayjs'
 
 import { sendSlackMessage } from './common/slackPosting'
-import { flexjaransvarlige } from './common/teammedlemmer'
+import { flexjaransvarlig } from './common/flexjaransvarlig'
 
-const startDate = dayjs('2023-06-03').startOf('week')
-const currentDate = dayjs()
-const weeksSinceStart = currentDate.diff(startDate, 'week')
-
-const ansvarligIndex = weeksSinceStart % flexjaransvarlige.length // Bruker modulo for å rotere
-const ansvarlig = flexjaransvarlige[ansvarligIndex]
+const ansvarlig = flexjaransvarlig()
 console.log(`Ansvarlig er ${ansvarlig.initialer}`)
 
 // eslint-disable-next-line

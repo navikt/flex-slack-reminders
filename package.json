@@ -13,6 +13,7 @@
         "dependabot-alerts": "ncc run src/dependabot-alerts.ts",
         "gamle-trello-kort": "ncc run src/gamle-trello-kort.ts",
         "prodansvar": "ncc run src/prodansvar.ts",
+        "ny-uke": "ncc run src/ny-uke.ts",
         "retro-rullering": "ncc run src/retro.ts",
         "flexjaransvar": "ncc run src/flexjaransvar.ts",
         "lint": "eslint --ext=ts src",

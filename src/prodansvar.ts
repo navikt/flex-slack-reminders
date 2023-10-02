@@ -1,16 +1,9 @@
 import './common/configInit'
-import * as dayjs from 'dayjs'
 
 import { sendSlackMessage } from './common/slackPosting'
-import { prodansvarlige } from './common/teammedlemmer'
+import { prodansvarlig } from './common/prodansvarlig'
 
-const startDate = dayjs('2023-08-07')
-const currentDate = dayjs()
-const weeksSinceStart = currentDate.diff(startDate, 'week')
-
-const ansvarligIndex = weeksSinceStart % prodansvarlige.length // Bruker modulo for å rotere
-const ansvarlig = prodansvarlige[ansvarligIndex]
-console.log(`Ansvarlig er ${ansvarlig.initialer}`)
+const ansvarlig = prodansvarlig()
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const blocks = [] as any[]

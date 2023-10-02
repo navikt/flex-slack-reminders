@@ -1,11 +1,10 @@
-name: retro-rullering
+name: Gamle trello kort
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 7 * * 5'
+    - cron: '15 6 * * 1'
 jobs:
-  retro-rullering:
-    name: retro-rullering
+  ny-uke:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -17,6 +16,6 @@ jobs:
       - run: npm ci
         env:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm run retro-rullering
+      - run: npm run ny-uke
         env:
           FLEXINTERNAL_WEBHOOK: ${{ secrets.FLEXINTERNAL_WEBHOOK }}
