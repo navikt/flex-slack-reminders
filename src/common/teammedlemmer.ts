@@ -1,7 +1,7 @@
 export const prodansvarlige = [
     { initialer: 'BIK', memberId: 'UMWEVMRM4' },
-    { initialer: 'NJM', memberId: 'U02AM04QV96' },
     { initialer: 'HSA', memberId: 'UPU6U4H9R' },
+    { initialer: 'NJM', memberId: 'U02AM04QV96' },
     { initialer: 'GB', memberId: 'U0124V94CLR' },
     { initialer: 'ØK', memberId: 'U021UJDDMHB' },
 ]
