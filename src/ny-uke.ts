@@ -25,21 +25,21 @@ blocks.push(
         type: 'section',
         text: {
             type: 'mrkdwn',
-            text: `:male-police-officer: OKR Boardet finner vi her <https://flex-docs.ekstern.dev.nav.no/okr-board|OKR Board>`,
+            text: `OKR Boardet finner vi her <https://flex-docs.ekstern.dev.nav.no/okr-board|OKR Board>`,
         },
     },
     {
         type: 'section',
         text: {
             type: 'mrkdwn',
-            text: `:male-police-officer: Det er <@${prodansvarlig().memberId}> som har prodansvar hele denne uka.`,
+            text: `Det er <@${prodansvarlig().memberId}> som har prodansvar hele denne uka.`,
         },
     },
     {
         type: 'section',
         text: {
             type: 'mrkdwn',
-            text: `På fredag har  <@${flexjaransvarlig().memberId}> flexjaransvar.`,
+            text: `På fredag har <@${flexjaransvarlig().memberId}> flexjaransvar.`,
         },
     },
 )
