@@ -1,0 +1,26 @@
+name: codeql-alerts
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 * * 2'
+jobs:
+  codeql-alerts:
+    name: codeql-alerts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: ./hent-repoer.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.READER_TOKEN }}
+      - run: npm run codeql-alerts
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECURITY_EVENTS_PAT }}
+          FLEX_DEV_WEBHOOK: ${{ secrets.FLEX_DEV_WEBHOOK }}
