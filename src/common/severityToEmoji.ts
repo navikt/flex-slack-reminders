@@ -3,18 +3,18 @@ type severitytype = 'critical' | 'high' | 'medium' | 'low' | 'warning' | 'note' 
 export function severityToEmoji(severity: severitytype): string {
     switch (severity) {
         case 'critical':
-            return ':rotating_light:'
+            return ':severity-critical:'
         case 'high':
-            return ':exclamation:'
+            return ':severity-high:'
         case 'medium':
-            return ':warning:'
+            return ':severity-medium:'
         case 'low':
-            return ':information_source:'
+            return ':severity-low:'
         case 'warning':
-            return ':warning:'
+            return ':severity-medium:'
         case 'note':
-            return ':information_source:'
+            return ':severity-low:'
         default:
-            return ':information_source:'
+            return ':severity-medium:'
     }
 }
