@@ -5,7 +5,7 @@ import { sendSlackMessage } from './common/slackPosting'
 import { numberToSlackEmoji } from './common/numberToEmoji'
 import { hentTrellokort } from './common/trelloApi'
 
-const maxDager = 21
+const maxDager = 30
 
 const trellokort = await hentTrellokort()
 const gamle = trellokort.filter((trello) => dayjs().diff(dayjs(trello.dateLastActivity), 'day') > maxDager)
