@@ -19,4 +19,4 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run prodansvar
         env:
-          FLEX_DEV_WEBHOOK: ${{ secrets.FLEX_DEV_WEBHOOK }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
