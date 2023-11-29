@@ -1,40 +1,50 @@
 import './common/configInit'
 import * as dayjs from 'dayjs'
 
-import { sendSlackMessage } from './common/slackPosting'
 import { numberToSlackEmoji } from './common/numberToEmoji'
 import { hentTrellokort } from './common/trelloApi'
+import { slackWebClient } from './common/slackClient'
+import { flexInternal } from './common/slackChannels'
 
 const maxDager = 30
 
 const trellokort = await hentTrellokort()
 const gamle = trellokort.filter((trello) => dayjs().diff(dayjs(trello.dateLastActivity), 'day') > maxDager)
-
+console.log(`Fant ${gamle.length} gamle trellokort`)
 if (gamle.length > 0) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const blocks = [] as any[]
-    blocks.push({ type: 'divider' })
-
-    blocks.push({
-        type: 'section',
-        text: {
-            type: 'mrkdwn',
-            text: `:warning: *Trellotavla* :trello:
-Vi har ${gamle.length} trellokort uten aktivitet de siste  ${maxDager} dagene.
+    const hovedpost = await slackWebClient.chat.postMessage({
+        channel: flexInternal(),
+        blocks: [
+            {
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `Vi har ${gamle.length} trellokort uten aktivitet de siste  ${maxDager} dagene.
 Vurder lukking eller snoozing av disse kortene.`,
-        },
+                },
+            },
+        ],
+        icon_emoji: ':trello:',
+        username: 'Trellotavla',
+        text: 'Pullrequests',
     })
 
-    gamle.map((pull, idx) => {
-        blocks.push({ type: 'divider' })
-        blocks.push({
-            type: 'section',
-            text: {
-                type: 'mrkdwn',
-                text: `${numberToSlackEmoji(idx + 1)} *<${pull.shortUrl}|${pull.name}>*`,
-            },
+    gamle.map(async (pull, idx) => {
+        await slackWebClient.chat.postMessage({
+            channel: flexInternal(),
+            blocks: [
+                {
+                    type: 'section',
+                    text: {
+                        type: 'mrkdwn',
+                        text: `${numberToSlackEmoji(idx + 1)} *<${pull.shortUrl}|${pull.name}>*`,
+                    },
+                },
+            ],
+            icon_emoji: ':trello:',
+            username: 'Trellotavla',
+            text: 'Pullrequests',
+            thread_ts: hovedpost.ts,
         })
     })
-
-    await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
 }

@@ -18,7 +18,7 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run gamle-trello-kort
         env:
-          FLEXINTERNAL_WEBHOOK: ${{ secrets.FLEXINTERNAL_WEBHOOK }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
           TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
           TRELLO_BOARD: ${{ secrets.TRELLO_BOARD }}
