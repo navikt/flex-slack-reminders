@@ -1,12 +1,15 @@
 import './common/configInit'
 
+import { Block, KnownBlock } from '@slack/types'
+
 import { octokit } from './octokit'
 import { hentRepoer } from './common/hentRepoer'
-import { sendSlackMessage } from './common/slackPosting'
 import { numberToSlackEmoji } from './common/numberToEmoji'
+import { slackWebClient } from './common/slackClient'
+import { flexDev } from './common/slackChannels'
 
 const repoer = hentRepoer()
-let fantAlert = false
+const alleBlocks = [] as (KnownBlock | Block)[][]
 
 for (const repo of repoer) {
     console.log('Henter for repo ' + repo)
@@ -17,9 +20,7 @@ for (const repo of repoer) {
     })
 
     if (dependabotAlerts.data.length > 0) {
-        fantAlert = true
-        // eslint-disable-next-line
-        const blocks = [] as any[]
+        const blocks = [] as (KnownBlock | Block)[]
         blocks.push({ type: 'divider' })
         blocks.push({
             type: 'section',
@@ -41,21 +42,50 @@ Vi bør fikse eller lukke disse`,
             })
         })
 
-        await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
-        console.log(`Sendte til slack for repo '${repo}'`)
+        alleBlocks.push(blocks)
     }
 }
 
-if (!fantAlert) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const blocks = [] as any[]
-    blocks.push({
-        type: 'section',
-        text: {
-            type: 'mrkdwn',
-            text: `:godstolen: *Ingen dependabot alerts i noen av repoene våre* :tada: `,
-        },
+if (alleBlocks.length > 0) {
+    const hovedpost = await slackWebClient.chat.postMessage({
+        channel: flexDev(),
+        blocks: [
+            {
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `Vi har dependabotalerts!`,
+                },
+            },
+        ],
+        icon_emoji: ':dependabot:',
+        username: 'Dependabot alerts',
+        text: 'Dependabot',
     })
-
-    await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
+    alleBlocks.forEach(async (blocks) => {
+        await slackWebClient.chat.postMessage({
+            channel: flexDev(),
+            blocks,
+            icon_emoji: ':warning:',
+            username: 'Dependabot alerts må ryddes i',
+            text: 'Dependabot',
+            thread_ts: hovedpost.ts,
+        })
+    })
+} else {
+    await slackWebClient.chat.postMessage({
+        channel: flexDev(),
+        blocks: [
+            {
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `:meow_tada:`,
+                },
+            },
+        ],
+        icon_emoji: ':godstolen:',
+        username: 'Vi har ingen dependabot alerts!',
+        text: 'Pullrequests',
+    })
 }
