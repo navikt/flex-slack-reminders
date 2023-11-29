@@ -1,12 +1,15 @@
 import './common/configInit'
 
+import { Block, KnownBlock } from '@slack/types'
+
 import { octokit } from './octokit'
 import { hentRepoer } from './common/hentRepoer'
-import { sendSlackMessage } from './common/slackPosting'
 import { severityToEmoji } from './common/severityToEmoji'
+import { slackWebClient } from './common/slackClient'
+import { flexDev } from './common/slackChannels'
 
 const repoer = hentRepoer()
-let fantAlert = false
+const alleBlocks = [] as (KnownBlock | Block)[][]
 
 for (const repo of repoer) {
     console.log('Henter for repo ' + repo)
@@ -17,7 +20,6 @@ for (const repo of repoer) {
             state: 'open',
         })
         if (codeScanningAlerts.data.length > 0) {
-            fantAlert = true
             // eslint-disable-next-line
             const blocks = [] as any[]
             blocks.push({ type: 'divider' })
@@ -42,8 +44,8 @@ Vi bør fikse eller lukke disse`,
                     },
                 })
             })
+            alleBlocks.push(blocks)
 
-            await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
             console.log(`Sendte til slack for repo '${repo}'`)
         }
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -54,16 +56,46 @@ Vi bør fikse eller lukke disse`,
     }
 }
 
-if (!fantAlert) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const blocks = [] as any[]
-    blocks.push({
-        type: 'section',
-        text: {
-            type: 'mrkdwn',
-            text: `:godstolen: *Ingen code scanning alerts i noen av repoene våre* :tada: `,
-        },
+if (alleBlocks.length > 0) {
+    const hovedpost = await slackWebClient.chat.postMessage({
+        channel: flexDev(),
+        blocks: [
+            {
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `Vi har CodeQL alerts!`,
+                },
+            },
+        ],
+        icon_emoji: ':codeql:',
+        username: 'CodeQL alerts',
+        text: 'CodeQL',
     })
-
-    await sendSlackMessage('FLEX_DEV_WEBHOOK', { blocks })
+    alleBlocks.forEach(async (blocks) => {
+        await slackWebClient.chat.postMessage({
+            channel: flexDev(),
+            blocks,
+            icon_emoji: ':warning:',
+            username: 'CodeQL alerts må ryddes i',
+            text: 'CodeQL',
+            thread_ts: hovedpost.ts,
+        })
+    })
+} else {
+    await slackWebClient.chat.postMessage({
+        channel: flexDev(),
+        blocks: [
+            {
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `:meow_tada:`,
+                },
+            },
+        ],
+        icon_emoji: ':godstolen:',
+        username: 'Vi har ingen CodeQL alerts!',
+        text: 'CodeQL',
+    })
 }

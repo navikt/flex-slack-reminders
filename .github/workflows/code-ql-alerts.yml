@@ -23,4 +23,4 @@ jobs:
       - run: npm run code-ql-alerts
         env:
           GITHUB_TOKEN: ${{ secrets.SECURITY_EVENTS_PAT }}
-          FLEX_DEV_WEBHOOK: ${{ secrets.FLEX_DEV_WEBHOOK }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}

@@ -54,7 +54,7 @@ if (alleBlocks.length > 0) {
                 type: 'section',
                 text: {
                     type: 'mrkdwn',
-                    text: `Vi har dependabotalerts!`,
+                    text: `Vi har Dependabot alerts!`,
                 },
             },
         ],
@@ -85,7 +85,7 @@ if (alleBlocks.length > 0) {
             },
         ],
         icon_emoji: ':godstolen:',
-        username: 'Vi har ingen dependabot alerts!',
-        text: 'Pullrequests',
+        username: 'Vi har ingen Dependabot alerts!',
+        text: 'Dependabot',
     })
 }
