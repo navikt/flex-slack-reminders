@@ -1,7 +1,8 @@
 import './common/configInit'
 
-import { sendSlackMessage } from './common/slackPosting'
 import { flexjaransvarlig } from './common/flexjaransvarlig'
+import { slackWebClient } from './common/slackClient'
+import { flexInternal } from './common/slackChannels'
 
 const ansvarlig = flexjaransvarlig()
 console.log(`Ansvarlig er ${ansvarlig.initialer}`)
@@ -11,14 +12,10 @@ const blocks = [] as any[]
 
 blocks.push(
     {
-        type: 'divider',
-    },
-    {
         type: 'section',
         text: {
             type: 'mrkdwn',
-            text: `:male-police-officer: *Flexjar ansvar denne uka*
-Det er <@${ansvarlig.memberId}> som har flexjar ansvar denne uka.`,
+            text: `Det er <@${ansvarlig.memberId}> som har flexjar ansvar denne uka.`,
         },
     },
     {
@@ -39,4 +36,10 @@ Det er <@${ansvarlig.memberId}> som har flexjar ansvar denne uka.`,
     },
 )
 
-await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
+await slackWebClient.chat.postMessage({
+    channel: flexInternal(),
+    blocks,
+    icon_emoji: ':prinsipp_brukers_situasjon:',
+    username: 'Flexjar ansvar denne uka',
+    text: 'Ukens flexjaransvar',
+})
