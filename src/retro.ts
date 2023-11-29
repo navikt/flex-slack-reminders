@@ -1,8 +1,9 @@
 import './common/configInit'
 import * as dayjs from 'dayjs'
 
-import { sendSlackMessage } from './common/slackPosting'
 import { retroListe } from './common/trelloRetroListe'
+import { slackWebClient } from './common/slackClient'
+import { flexInternal } from './common/slackChannels'
 
 const startDate = dayjs('2023-09-29')
 const currentDate = dayjs()
@@ -26,7 +27,13 @@ const ukeAdjustment = 1
 
 if ((currentWeekNumber + ukeAdjustment) % 4 === 0) {
     console.log('Tid for retro')
-    await sendSlackMessage('FLEXINTERNAL_WEBHOOK', { blocks })
+    await slackWebClient.chat.postMessage({
+        channel: flexInternal(),
+        blocks,
+        icon_emoji: ':godstolen:',
+        username: 'Retro Bot',
+        text: 'Retro',
+    })
 } else {
     console.log(`Ikke tid for retro fordi ukenummer pluss ${ukeAdjustment} ikke er delelig med 4`)
 }
