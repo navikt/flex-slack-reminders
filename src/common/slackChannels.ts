@@ -11,3 +11,9 @@ export function flexDev(): string {
     }
     return 'G0112C98QG3'
 }
+export function flexProdansvar(): string {
+    if (process.env.SLACK_TESTKANAL) {
+        return process.env.SLACK_TESTKANAL
+    }
+    return 'C06GK4VQFFE'
+}

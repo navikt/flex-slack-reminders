@@ -2,12 +2,12 @@ import './common/configInit'
 
 import { prodansvarlig } from './common/prodansvarlig'
 import { slackWebClient } from './common/slackClient'
-import { flexDev } from './common/slackChannels'
+import { flexProdansvar } from './common/slackChannels'
 
 const ansvarlig = prodansvarlig()
 
 const hovedpost = await slackWebClient.chat.postMessage({
-    channel: flexDev(),
+    channel: flexProdansvar(),
     blocks: [
         {
             type: 'section',
@@ -23,7 +23,7 @@ const hovedpost = await slackWebClient.chat.postMessage({
 })
 
 await slackWebClient.chat.postMessage({
-    channel: flexDev(),
+    channel: flexProdansvar(),
     blocks: [
         {
             type: 'section',
