@@ -7,7 +7,6 @@ export const prodansvarlige = [
 ]
 
 export const flexjaransvarlige = [
-    { initialer: 'MG', memberId: 'UJW0A57FD' },
     { initialer: 'OBL', memberId: 'U06FTG7L532' },
     { initialer: 'NJM', memberId: 'U02AM04QV96' },
     { initialer: 'HSA', memberId: 'UPU6U4H9R' },
