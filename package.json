@@ -28,7 +28,7 @@
         "@octokit/rest": "^20.0.2",
         "@slack/web-api": "^7.0.2",
         "dayjs": "^1.11.10",
-        "dotenv": "^16.4.1"
+        "dotenv": "^16.4.5"
     },
     "devDependencies": {
         "@navikt/eslint-config-teamsykmelding": "3.0.0",
