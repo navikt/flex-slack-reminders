@@ -2,7 +2,7 @@ import * as dayjs from 'dayjs'
 
 import { prodansvarlige } from './teammedlemmer'
 
-const justeringAvAntall = -1
+const justeringAvAntall = -2
 
 export function prodansvarlig(): { initialer: string; memberId: string } {
     const startDate = dayjs('2023-08-07')
