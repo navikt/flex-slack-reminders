@@ -2,7 +2,7 @@ name: ny uke
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 7 * * 1'
+    - cron: '30 6 * * 1'
 jobs:
   ny-uke:
     runs-on: ubuntu-latest

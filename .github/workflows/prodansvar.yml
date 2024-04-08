@@ -2,7 +2,7 @@ name: prodansvar
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 13 * * 1,2,3,4,5'
+    - cron: '30 12 * * 1,2,3,4,5'
 jobs:
   prodansvar:
     name: prodansvar
