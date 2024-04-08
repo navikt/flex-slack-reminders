@@ -2,7 +2,7 @@ name: retro-rapportering
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 08 * * 5'
+    - cron: '30 7 * * 5'
 jobs:
   retro-rapportering:
     name: retro-rapportering
