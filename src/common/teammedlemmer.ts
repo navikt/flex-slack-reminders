@@ -13,4 +13,6 @@ export const flexjaransvarlige = [
     { initialer: 'ØK', memberId: 'U021UJDDMHB' },
     { initialer: 'GB', memberId: 'U0124V94CLR' },
     { initialer: 'PB', memberId: 'UE89E1WTY' },
+    { initialer: 'TM', memberId: 'U06QFQVELJF' },
+    { initialer: 'ATS', memberId: 'U04HMSMPTKK' },
 ]
