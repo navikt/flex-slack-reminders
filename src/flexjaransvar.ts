@@ -39,7 +39,7 @@ await slackWebClient.chat.postMessage({
             text: {
                 type: 'mrkdwn',
                 text: `:link: *Nyttige lenker*
-<https://flexjar.intern.nav.no/|Flexjar>`,
+<https://flexjar.ansatt.nav.no/|Flexjar>`,
             },
         },
     ],
