@@ -18,7 +18,7 @@ const hovedpost = await slackWebClient.chat.postMessage({
             },
         },
     ],
-    icon_emoji: ':prinsipp_brukers_situasjon:',
+    icon_emoji: ':flexjar:',
     username: 'Flexjar ansvar denne uka',
     text: 'Ukens flexjaransvar',
 })
