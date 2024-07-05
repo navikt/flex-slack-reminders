@@ -25,13 +25,6 @@ await slackWebClient.chat.postMessage({
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: `OKR Boardet finner vi her <https://flex-docs.ekstern.dev.nav.no/okr-board|OKR Board>`,
-            },
-        },
-        {
-            type: 'section',
-            text: {
-                type: 'mrkdwn',
                 text: `Det er <@${prodansvarlig().memberId}> som har prodansvar hele denne uka.`,
             },
         },
