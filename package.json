@@ -23,7 +23,7 @@
         "format": "npm run lint:fix && npm run prettier:write"
     },
     "dependencies": {
-        "@octokit/rest": "^20.1.1",
+        "@octokit/rest": "^21.0.1",
         "@slack/web-api": "^7.3.2",
         "dayjs": "^1.11.12",
         "dotenv": "^16.4.5"
