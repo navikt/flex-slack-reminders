@@ -6,7 +6,7 @@ import { hentTrellokort } from './common/trelloApi'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 
-const maxDager = 60
+const maxDager = 120
 
 const trellokort = await hentTrellokort()
 const gamle = trellokort.filter((trello) => dayjs().diff(dayjs(trello.dateLastActivity), 'day') > maxDager)
