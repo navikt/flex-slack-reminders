@@ -5,7 +5,7 @@ import { Flexer, prodansvarlige } from './teammedlemmer'
 import { hentAnsvarligFraFil } from './util/fil'
 
 export function prodansvarlig(dagensDato?: Dayjs): { initialer: string; memberId: string } {
-    const startDate = dayjs('2023-08-07')
+    const startDate = dayjs('2024-09-20')
     const currentDate = dagensDato || dayjs()
 
     // Beregn ukeforskjellen basert på nåværende uke

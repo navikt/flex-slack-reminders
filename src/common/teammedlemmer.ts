@@ -11,9 +11,9 @@ export const alleFlexere: Flexer[] = [
     { initialer: 'MV', memberId: 'U06QE5KETL2', flexjar: true, retro: true },
     { initialer: 'PB', memberId: 'UE89E1WTY', flexjar: true, retro: true },
     { initialer: 'TM', memberId: 'U06QFQVELJF', flexjar: true, retro: true },
+    { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'GB', memberId: 'U0124V94CLR', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true },
 ]

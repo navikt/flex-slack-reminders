@@ -6,7 +6,7 @@ import { prodansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
 import { lagFil } from './util/fil'
 
-const startDato = dayjs('2023-08-07')
+const startDato = dayjs('2024-09-20')
 
 describe('prodansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -31,7 +31,7 @@ describe('prodansvarlig Funksjon', () => {
         const ukerAaLeggeTil = rotasjonsLengde * 2 // Fullfører én full rotasjon
         const testDato = startDato.add(ukerAaLeggeTil, 'week')
         const ansvarlig = prodansvarlig(testDato)
-        expect(ansvarlig).toEqual(prodansvarlige[0]) // Skal sykle tilbake til det første medlemmet
+        expect(ansvarlig).toEqual(prodansvarlige[0]) // Skal rotere tilbake til det første medlemmet
     })
 
     it('skal håndtere datoer som ikke er eksakte multipler av to uker', () => {
@@ -52,6 +52,6 @@ describe('prodansvarlig Funksjon', () => {
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('prod')
         lagFil('prod', data)
-        expect(hentProdansvarlig(38)).toEqual(prodansvarlige[3])
+        expect(hentProdansvarlig(38)).toEqual(prodansvarlige[0])
     })
 })
