@@ -1,29 +1,32 @@
 import dayjs from 'dayjs'
 import { Dayjs } from 'dayjs'
 
-import { prodansvarlige } from './teammedlemmer'
+import { Flexer, prodansvarlige } from './teammedlemmer'
+import { hentAnsvarligFraFil } from './util/fil'
 
-const justeringAvAntall = -2
-
-export function prodansvarlig(ukerForskjell = 0, dagensDato?: Dayjs): { initialer: string; memberId: string } {
+export function prodansvarlig(dagensDato?: Dayjs): { initialer: string; memberId: string } {
     const startDate = dayjs('2023-08-07')
     const currentDate = dagensDato || dayjs()
 
-    // Beregn ukeforskjellen basert på nåværende uke og eventuelt ukerForskjell
-    const weeksSinceStart = currentDate.diff(startDate, 'week') + ukerForskjell
+    // Beregn ukeforskjellen basert på nåværende uke
+    const weeksSinceStart = currentDate.diff(startDate, 'week')
+    const biWeeksSinceStart = Math.floor(weeksSinceStart / 2)
 
-    // Bruk modulo for å finne korrekt ansvarlig etter rotasjon
-    const ansvarligIndex = (weeksSinceStart + justeringAvAntall) % prodansvarlige.length
+    const ansvarligIndex = biWeeksSinceStart % prodansvarlige.length
 
     // Hent ansvarlig fra listen basert på beregnet indeks
     return prodansvarlige[ansvarligIndex]
+}
+
+export function hentProdansvarlig(denneUken?: number): Flexer {
+    return hentAnsvarligFraFil('prod', denneUken)
 }
 
 const prodansvarLoop =
     'https://navno.sharepoint.com/:fl:/r/contentstorage/CSP_403ddf5b-0f8e-459f-a1b3-7f0e45f4560d/Dokumentbibliotek/LoopAppData/Produksjonsansvar.loop?d=w6e8ca584e971468fb85fc38e648dd68f&csf=1&web=1&e=TvZSfH&nav=cz0lMkZjb250ZW50c3RvcmFnZSUyRkNTUF80MDNkZGY1Yi0wZjhlLTQ1OWYtYTFiMy03ZjBlNDVmNDU2MGQmZD1iJTIxVzk4OVFJNFBuMFdoczM4T1JmUldEU2VSbGdycWM1Uk5vM2x2c2VhaFd5Sk15Z0RkaXd2X1RiQ3NER0VxTHhpZSZmPTAxRzZIVVNBNEVVV0dHNDRQSlI1RExRWDZEUlpTSTNWVVAmYz0lMkYmYT1Mb29wQXBwJnA9JTQwZmx1aWR4JTJGbG9vcC1wYWdlLWNvbnRhaW5lciZ4PSU3QiUyMnclMjIlM0ElMjJUMFJUVUh4dVlYWnVieTV6YUdGeVpYQnZhVzUwTG1OdmJYeGlJVmM1T0RsUlNUUlFiakJYYUhNek9FOVNabEpYUkZObFVteG5jbkZqTlZKT2J6TnNkbk5sWVdoWGVVcE5lV2RFWkdsM2RsOVVZa056UkVkRmNVeDRhV1Y4TURGSE5raFZVMEV6U3pKQ1ZWbFNSMHMwVjBKR1NUSTFTRTlETTFoT1ZrbFlVZyUzRCUzRCUyMiUyQyUyMmklMjIlM0ElMjI0M2UwZGQxZi1iOWNiLTQyOGMtOWMyNC0wNGVmY2I2MjFiZTglMjIlN0Q%3D'
 
 export const dagTekst = (): string => {
-    const mandag = `**God mandag, <@${prodansvarlig().memberId}>! 🌞**
+    const mandag = `**God mandag, <@${hentProdansvarlig().memberId}>! 🌞**
 Ny uke, nye muligheter – og i dag er du prod-ansvarlig! 🚀
 
 Dagens oppgaver er som følger:
@@ -39,7 +42,7 @@ Hvis du trenger tilgang til alle relevante sider for dagens sjekk, <${prodansvar
 Husk at vi alle setter pris på innsatsen du legger inn – du holder produksjonen flytende! 👏🎉
 `
 
-    const tirsdag = `**God tirsdag, <@${prodansvarlig().memberId}>! ☕️**
+    const tirsdag = `**God tirsdag, <@${hentProdansvarlig().memberId}>! ☕️**
 Dagens sjekk er viktig for å holde ting stabilt! 🚀
 
 Her er hva du må gjøre i dag:
@@ -55,7 +58,7 @@ Hvis du trenger tilgang til alle relevante sider for dagens sjekk, <${prodansvar
 Keep up the great work! 💪🎉
 `
 
-    const onsdag = `**God onsdag, <@${prodansvarlig().memberId}>! 🐪**
+    const onsdag = `**God onsdag, <@${hentProdansvarlig().memberId}>! 🐪**
 Halvveis gjennom uken, men vi har fortsatt litt igjen å sjekke! 🚀
 
 Dagens oppgaver:
@@ -71,7 +74,7 @@ Hvis du trenger tilgang til alle relevante sider for dagens sjekk, <${prodansvar
 Du gjør en strålende jobb! 🌟
 `
 
-    const torsdag = `**God torsdag, <@${prodansvarlig().memberId}>! 🍂**
+    const torsdag = `**God torsdag, <@${hentProdansvarlig().memberId}>! 🍂**
 Nå nærmer vi oss helgen, men vi har fortsatt noen viktige sjekker å gjøre før vi kan slappe av! 🚀
 
 Dagens oppgaver:
@@ -87,7 +90,7 @@ Hvis du trenger tilgang til alle relevante sider for dagens sjekk, <${prodansvar
 Snart helg, men vi må holde fokus! 🎯
 `
 
-    const fredag = `**God fredag, <@${prodansvarlig().memberId}>! 🎉**
+    const fredag = `**God fredag, <@${hentProdansvarlig().memberId}>! 🎉**
 Siste innspurt før helgen! 🚀
 
 Dagens sjekkliste:
@@ -105,7 +108,7 @@ Takk for innsatsen denne uken, vi setter stor pris på det! 👏
 
 ---
 
-**PS! <@${prodansvarlig(1).memberId}>, du er prod-ansvarlig neste uke! 💥** Nyt helgen 🏖️, lad opp batteriene 🔋, og vær klar til å rocke produksjonen fra mandag! 🎸🔥
+**PS! <@${hentProdansvarlig(dayjs().week() + 1).memberId}>, du er prod-ansvarlig neste uke! 💥** Nyt helgen 🏖️, lad opp batteriene 🔋, og vær klar til å rocke produksjonen fra mandag! 🎸🔥
 `
 
     switch (dayjs().day()) {

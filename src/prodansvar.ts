@@ -1,10 +1,8 @@
 import './common/configInit'
 
-import { dagTekst, prodansvarlig } from './common/prodansvarlig'
+import { dagTekst, hentProdansvarlig } from './common/prodansvarlig'
 import { slackWebClient } from './common/slackClient'
 import { flexProdansvar } from './common/slackChannels'
-
-const ansvarlig = prodansvarlig()
 
 const hovedpost = await slackWebClient.chat.postMessage({
     channel: flexProdansvar(),
@@ -13,7 +11,7 @@ const hovedpost = await slackWebClient.chat.postMessage({
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: `Det er <@${ansvarlig.memberId}> som har prodansvar denne uka. Dagens oppgaver finnes i tråd :thread:`,
+                text: `Det er <@${hentProdansvarlig().memberId}> som har prodansvar denne uka. Dagens oppgaver finnes i tråd :thread:`,
             },
         },
     ],

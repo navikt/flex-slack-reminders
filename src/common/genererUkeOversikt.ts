@@ -37,7 +37,7 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod'): UkeData[] 
                 case 'flexjar':
                     return flexjaransvarlig(ukeStart)
                 case 'prod':
-                    return prodansvarlig(0, ukeStart)
+                    return prodansvarlig(ukeStart)
             }
         }
 

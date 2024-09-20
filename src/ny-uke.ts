@@ -2,8 +2,8 @@ import './common/configInit'
 import dayjs from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 
-import { prodansvarlig } from './common/prodansvarlig'
-import { flexjaransvarlig, hentFlexjaransvarlig } from "./common/flexjaransvarlig";
+import { hentProdansvarlig } from './common/prodansvarlig'
+import { hentFlexjaransvarlig } from './common/flexjaransvarlig'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 import { hentRetroAnsvarlig } from './common/retroansvarlig'
@@ -26,7 +26,7 @@ await slackWebClient.chat.postMessage({
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: `Det er <@${prodansvarlig().memberId}> som har prodansvar hele denne uka.`,
+                text: `Det er <@${hentProdansvarlig().memberId}> som har prodansvar hele denne uka.`,
             },
         },
         {
