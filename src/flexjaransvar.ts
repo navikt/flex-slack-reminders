@@ -1,10 +1,10 @@
 import './common/configInit'
 
-import { flexjaransvarlig } from './common/flexjaransvarlig'
+import { hentFlexjaransvarlig } from './common/flexjaransvarlig'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 
-const ansvarlig = flexjaransvarlig()
+const ansvarlig = hentFlexjaransvarlig()
 console.log(`Ansvarlig er ${ansvarlig.initialer}`)
 
 const hovedpost = await slackWebClient.chat.postMessage({
