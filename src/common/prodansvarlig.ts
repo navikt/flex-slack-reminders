@@ -1,12 +1,13 @@
-import * as dayjs from 'dayjs'
+import dayjs from 'dayjs'
+import { Dayjs } from 'dayjs'
 
 import { prodansvarlige } from './teammedlemmer'
 
 const justeringAvAntall = -2
 
-export function prodansvarlig(ukerForskjell = 0): { initialer: string; memberId: string } {
+export function prodansvarlig(ukerForskjell = 0, dagensDato?: Dayjs): { initialer: string; memberId: string } {
     const startDate = dayjs('2023-08-07')
-    const currentDate = dayjs()
+    const currentDate = dagensDato || dayjs()
 
     // Beregn ukeforskjellen basert på nåværende uke og eventuelt ukerForskjell
     const weeksSinceStart = currentDate.diff(startDate, 'week') + ukerForskjell
