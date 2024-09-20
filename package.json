@@ -20,7 +20,14 @@
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",
         "prettier:check": "prettier --check .",
-        "format": "npm run prettier:write && npm run lint:fix"
+        "format": "npm run prettier:write && npm run lint:fix",
+        "test": "vitest",
+        "build-retro-ansvar": "ncc build src/generer-retro.ts -o build",
+        "build-flexjar-ansvar": "ncc build src/generer-retro.ts -o build",
+        "build-prod-ansvar": "ncc build src/generer-retro.ts -o build",
+        "generer-retro-ansvar": "ncc run src/generer-retro.ts",
+        "generer-flexjar-ansvar": "ncc run src/generer-flexjar.ts",
+        "generer-prod-ansvar": "ncc run src/generer-prod.ts"
     },
     "dependencies": {
         "@octokit/rest": "^21.0.2",
@@ -36,7 +43,8 @@
         "eslint": "^8.57.0",
         "eslint-plugin-prettier": "^5.2.1",
         "prettier": "3.3.3",
-        "typescript": "^5.6.2"
+        "typescript": "^5.6.2",
+        "vitest": "^2.0.5"
     },
     "eslintConfig": {
         "extends": [
