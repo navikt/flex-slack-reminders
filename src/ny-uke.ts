@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 
 import { prodansvarlig } from './common/prodansvarlig'
-import { flexjaransvarlig } from './common/flexjaransvarlig'
+import { flexjaransvarlig, hentFlexjaransvarlig } from "./common/flexjaransvarlig";
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 import { hentRetroAnsvarlig } from './common/retroansvarlig'
@@ -33,7 +33,7 @@ await slackWebClient.chat.postMessage({
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: `På fredag har <@${flexjaransvarlig().memberId}> flexjaransvar.`,
+                text: `På fredag har <@${hentFlexjaransvarlig().memberId}> flexjaransvar.`,
             },
         },
         {
