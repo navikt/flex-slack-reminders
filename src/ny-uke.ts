@@ -26,7 +26,7 @@ await slackWebClient.chat.postMessage({
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: `Det er <@${hentProdansvarlig().memberId}> som har prodansvar hele denne uka.`,
+                text: `Det er <@${hentProdansvarlig().memberId}> som er bauta hele denne uka.`,
             },
         },
         {
