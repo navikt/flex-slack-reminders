@@ -6,21 +6,25 @@
         "build-stale-pull-request": "ncc build src/stale-pull-request.ts -o build",
         "build-dependabot-alerts": "ncc build src/dependabot-alerts.ts -o build",
         "build-gamle-trello-kort": "ncc build src/gamle-trello-kort.ts -o build",
-        "build-flexjaransvar": "ncc build src/flexjaransvar.ts -o build",
-        "build-prodansvar": "ncc build src/prodansvar.ts -o build",
         "build-code-ql": "ncc build src/codeql-alerts.ts -o build",
         "stale-pull-request": "ncc run src/stale-pull-request.ts",
         "dependabot-alerts": "ncc run src/dependabot-alerts.ts",
         "gamle-trello-kort": "ncc run src/gamle-trello-kort.ts",
-        "prodansvar": "ncc run src/prodansvar.ts",
         "ny-uke": "ncc run src/ny-uke.ts",
         "code-ql-alerts": "ncc run src/codeql-alerts.ts",
-        "flexjaransvar": "ncc run src/flexjaransvar.ts",
+        "build-flexjaransvar": "ncc build src/flexjaransvar.ts -o build",
+        "build-prodansvar": "ncc build src/prodansvar.ts -o build",
+        "build-retroansvar": "ncc run src/generer-retro.ts",
+        "flexjaransvar": "ncc run src/generer-flexjar.ts",
+        "prodansvar": "ncc run src/generer-prod.ts",
+        "retroansvar": "ncc run src/generer-retro.ts",
         "lint": "eslint --ext=ts src",
         "lint:fix": "eslint --ext=ts src --fix",
         "prettier:write": "prettier --write .",
         "prettier:check": "prettier --check .",
-        "format": "npm run prettier:write && npm run lint:fix"
+        "format": "npm run prettier:write && npm run lint:fix",
+        "test": "vitest",
+        "test:ci": "vitest --run"
     },
     "dependencies": {
         "@octokit/rest": "^21.0.2",
@@ -36,7 +40,8 @@
         "eslint": "^8.57.0",
         "eslint-plugin-prettier": "^5.2.1",
         "prettier": "3.3.3",
-        "typescript": "^5.6.2"
+        "typescript": "^5.6.2",
+        "vitest": "^2.0.5"
     },
     "eslintConfig": {
         "extends": [

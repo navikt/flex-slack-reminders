@@ -1,0 +1,603 @@
+[
+    {
+        "ukenummer": 38,
+        "datoFra": "2024-09-15",
+        "datoTil": "2024-09-21",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 39,
+        "datoFra": "2024-09-22",
+        "datoTil": "2024-09-28",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 40,
+        "datoFra": "2024-09-29",
+        "datoTil": "2024-10-05",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 41,
+        "datoFra": "2024-10-06",
+        "datoTil": "2024-10-12",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 42,
+        "datoFra": "2024-10-13",
+        "datoTil": "2024-10-19",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 43,
+        "datoFra": "2024-10-20",
+        "datoTil": "2024-10-26",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 44,
+        "datoFra": "2024-10-27",
+        "datoTil": "2024-11-02",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 45,
+        "datoFra": "2024-11-03",
+        "datoTil": "2024-11-09",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 46,
+        "datoFra": "2024-11-10",
+        "datoTil": "2024-11-16",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 47,
+        "datoFra": "2024-11-17",
+        "datoTil": "2024-11-23",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 48,
+        "datoFra": "2024-11-24",
+        "datoTil": "2024-11-30",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 49,
+        "datoFra": "2024-12-01",
+        "datoTil": "2024-12-07",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 50,
+        "datoFra": "2024-12-08",
+        "datoTil": "2024-12-14",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 51,
+        "datoFra": "2024-12-15",
+        "datoTil": "2024-12-21",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 52,
+        "datoFra": "2024-12-22",
+        "datoTil": "2024-12-28",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 1,
+        "datoFra": "2024-12-29",
+        "datoTil": "2025-01-04",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 2,
+        "datoFra": "2025-01-05",
+        "datoTil": "2025-01-11",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 3,
+        "datoFra": "2025-01-12",
+        "datoTil": "2025-01-18",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 4,
+        "datoFra": "2025-01-19",
+        "datoTil": "2025-01-25",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 5,
+        "datoFra": "2025-01-26",
+        "datoTil": "2025-02-01",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 6,
+        "datoFra": "2025-02-02",
+        "datoTil": "2025-02-08",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 7,
+        "datoFra": "2025-02-09",
+        "datoTil": "2025-02-15",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 8,
+        "datoFra": "2025-02-16",
+        "datoTil": "2025-02-22",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 9,
+        "datoFra": "2025-02-23",
+        "datoTil": "2025-03-01",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 10,
+        "datoFra": "2025-03-02",
+        "datoTil": "2025-03-08",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 11,
+        "datoFra": "2025-03-09",
+        "datoTil": "2025-03-15",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 12,
+        "datoFra": "2025-03-16",
+        "datoTil": "2025-03-22",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 13,
+        "datoFra": "2025-03-23",
+        "datoTil": "2025-03-29",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 14,
+        "datoFra": "2025-03-30",
+        "datoTil": "2025-04-05",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 15,
+        "datoFra": "2025-04-06",
+        "datoTil": "2025-04-12",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 16,
+        "datoFra": "2025-04-13",
+        "datoTil": "2025-04-19",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 17,
+        "datoFra": "2025-04-20",
+        "datoTil": "2025-04-26",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 18,
+        "datoFra": "2025-04-27",
+        "datoTil": "2025-05-03",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 19,
+        "datoFra": "2025-05-04",
+        "datoTil": "2025-05-10",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 20,
+        "datoFra": "2025-05-11",
+        "datoTil": "2025-05-17",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 21,
+        "datoFra": "2025-05-18",
+        "datoTil": "2025-05-24",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 22,
+        "datoFra": "2025-05-25",
+        "datoTil": "2025-05-31",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 23,
+        "datoFra": "2025-06-01",
+        "datoTil": "2025-06-07",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 24,
+        "datoFra": "2025-06-08",
+        "datoTil": "2025-06-14",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 25,
+        "datoFra": "2025-06-15",
+        "datoTil": "2025-06-21",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 26,
+        "datoFra": "2025-06-22",
+        "datoTil": "2025-06-28",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 27,
+        "datoFra": "2025-06-29",
+        "datoTil": "2025-07-05",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 28,
+        "datoFra": "2025-07-06",
+        "datoTil": "2025-07-12",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 29,
+        "datoFra": "2025-07-13",
+        "datoTil": "2025-07-19",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 30,
+        "datoFra": "2025-07-20",
+        "datoTil": "2025-07-26",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 31,
+        "datoFra": "2025-07-27",
+        "datoTil": "2025-08-02",
+        "ansvarlig": {
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 32,
+        "datoFra": "2025-08-03",
+        "datoTil": "2025-08-09",
+        "ansvarlig": {
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 33,
+        "datoFra": "2025-08-10",
+        "datoTil": "2025-08-16",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 34,
+        "datoFra": "2025-08-17",
+        "datoTil": "2025-08-23",
+        "ansvarlig": {
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 35,
+        "datoFra": "2025-08-24",
+        "datoTil": "2025-08-30",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 36,
+        "datoFra": "2025-08-31",
+        "datoTil": "2025-09-06",
+        "ansvarlig": {
+            "initialer": "MV",
+            "memberId": "U06QE5KETL2",
+            "flexjar": true,
+            "retro": true
+        }
+    },
+    {
+        "ukenummer": 37,
+        "datoFra": "2025-09-07",
+        "datoTil": "2025-09-13",
+        "ansvarlig": {
+            "initialer": "PB",
+            "memberId": "UE89E1WTY",
+            "flexjar": true,
+            "retro": true
+        }
+    }
+]

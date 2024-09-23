@@ -25,3 +25,4 @@ jobs:
       - run: npm run build-prodansvar
       - run: npm run build-flexjaransvar
       - run: npm run build-code-ql
+      - run: npm run build-retroansvar
