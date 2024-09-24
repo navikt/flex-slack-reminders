@@ -19,6 +19,7 @@ updates:
     schedule:
       interval: daily
       time: '03:00'
+    registries: "*"  
     open-pull-requests-limit: 10
     ignore:
       - dependency-name: 'eslint'
