@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 
 import { retroansvarlig } from './retroansvarlig'
@@ -17,10 +17,10 @@ export interface UkeData {
     ansvarlig: Flexer
 }
 
-export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod'): UkeData[] {
+export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Dayjs): UkeData[] {
     const ukeDataListe: UkeData[] = []
 
-    const idag = dayjs()
+    const idag = start || dayjs()
     const startDato = idag.startOf('week') // Mandag i inneværende uke
 
     //1 år frem

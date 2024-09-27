@@ -50,7 +50,7 @@ describe('prodansvarlig Funksjon', () => {
     })
 
     it('skal generere fil og hente inn data fra filen', () => {
-        const data = genererUkeData('prod')
+        const data = genererUkeData('prod', startDato)
         lagFil('prod', data)
         expect(hentProdansvarlig(38)).toEqual(prodansvarlige[0])
     })
