@@ -1,0 +1,22 @@
+name: sjekk-prodansvar
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 17 * * 1,2,3,4,5'
+jobs:
+  prodansvar:
+    name: sjekk-prodansvar
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run sjekk-prodansvar
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
