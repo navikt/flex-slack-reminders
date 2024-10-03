@@ -1,11 +1,11 @@
-name: prodansvar
+name: sjekk-prodansvar
 on:
   workflow_dispatch:
   schedule:
     - cron: '00 17 * * 1,2,3,4,5'
 jobs:
   prodansvar:
-    name: prodansvar
+    name: sjekk-prodansvar
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
