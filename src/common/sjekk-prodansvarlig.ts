@@ -26,7 +26,7 @@ export const finnSisteMeldingFraSlackbot = async (slackBot: Bot): Promise<Messag
         }
         return undefined
     } catch (error) {
-        console.error(`Error fetching message history from channel ${flexProdansvar()}:`, error)
+        console.error(`Klarte ikke hente meldinger fra kanal ${flexProdansvar()}:`, error)
         return undefined
     }
 }
@@ -50,6 +50,6 @@ export const masPaaProdansvarlig = async (melding: MessageElement): Promise<void
             thread_ts: melding.thread_ts,
         })
     } catch (error) {
-        console.error('Error posting reminder message:', error)
+        console.error('Klarte ikke sende melding:', error)
     }
 }
