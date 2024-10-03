@@ -40,7 +40,8 @@ export const masPaaProdansvarlig = async (melding: MessageElement): Promise<void
                     type: 'section',
                     text: {
                         type: 'mrkdwn',
-                        text: `Har du husket å gjøre dine oppgaver i dag <@${hentProdansvarlig().memberId}>`,
+                        text: `Har du husket å gjøre dine oppgaver i dag <@${hentProdansvarlig().memberId}>?
+                        Husk å reagere med ✅ når du har gått gjennom dagens oppgaver :nicely-done:`,
                     },
                 },
             ],
