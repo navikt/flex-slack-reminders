@@ -111,7 +111,8 @@ describe('masPaaProdansvarlig', () => {
                     type: 'section',
                     text: {
                         type: 'mrkdwn',
-                        text: `Har du husket å gjøre dine oppgaver i dag <@U56789>`,
+                        text: `Har du husket å gjøre dine oppgaver i dag <@U56789>?
+                        Husk å reagere med ✅ når du har gått gjennom dagens oppgaver :nicely-done:`,
                     },
                 },
             ],
@@ -128,7 +129,7 @@ describe('masPaaProdansvarlig', () => {
 
         await masPaaProdansvarlig(message)
 
-        expect(consoleSpy).toHaveBeenCalledWith('Error posting reminder message:', new Error('Failed to send message'))
+        expect(consoleSpy).toHaveBeenCalledWith('Klarte ikke sende melding:', new Error('Failed to send message'))
         consoleSpy.mockRestore()
     })
 })
