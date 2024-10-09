@@ -17,7 +17,6 @@ export const sjekkProdAnsvar = async (): Promise<void> => {
     }
 }
 
-//Kjører kun om filen er kjørt direkte (ikke i test)
-if (require.main === module) {
-    sjekkProdAnsvar().then()
+if (process.env.NODE_ENV !== 'test') {
+    await sjekkProdAnsvar()
 }
