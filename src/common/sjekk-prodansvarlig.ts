@@ -40,14 +40,15 @@ export const masPaaProdansvarlig = async (melding: MessageElement): Promise<void
                     text: {
                         type: 'mrkdwn',
                         text: `Har du husket å gjøre dine oppgaver i dag <@${hentProdansvarlig().memberId}>?
-                        Husk å reagere med ✅ når du har gått gjennom dagens oppgaver`,
+
+Husk å reagere med ✅ når du har gått gjennom dagens oppgaver`,
                     },
                 },
             ],
             icon_emoji: ':male-police-officer:',
             username: 'Dagens prodansvar',
             text: 'Husk prodansvar',
-            thread_ts: melding.thread_ts,
+            thread_ts: melding.ts,
         })
     } catch (error) {
         console.error('Klarte ikke sende melding:', error)
