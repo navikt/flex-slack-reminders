@@ -1,11 +1,10 @@
 import { MessageElement } from '@slack/web-api/dist/types/response/ConversationsHistoryResponse'
-import { Bot } from '@slack/web-api/dist/types/response/BotsInfoResponse'
 
 import { flexProdansvar } from './slackChannels'
 import { slackWebClient } from './slackClient'
 import { hentProdansvarlig } from './prodansvarlig'
 
-export const finnSisteMeldingFraSlackbot = async (slackBot: Bot): Promise<MessageElement | undefined> => {
+export const finnSisteMeldingFraSlackbot = async (botUserId: string): Promise<MessageElement | undefined> => {
     try {
         const channel = flexProdansvar()
         const response = await slackWebClient.conversations.history({
@@ -14,7 +13,7 @@ export const finnSisteMeldingFraSlackbot = async (slackBot: Bot): Promise<Messag
         })
 
         if (response.messages) {
-            const meldingerFraBot = response.messages.filter((melding) => melding.user === slackBot.user_id)
+            const meldingerFraBot = response.messages.filter((melding) => melding.bot_id === botUserId)
 
             if (meldingerFraBot.length > 0) {
                 return meldingerFraBot.reduce(
@@ -41,7 +40,7 @@ export const masPaaProdansvarlig = async (melding: MessageElement): Promise<void
                     text: {
                         type: 'mrkdwn',
                         text: `Har du husket å gjøre dine oppgaver i dag <@${hentProdansvarlig().memberId}>?
-                        Husk å reagere med ✅ når du har gått gjennom dagens oppgaver :nicely-done:`,
+                        Husk å reagere med ✅ når du har gått gjennom dagens oppgaver`,
                     },
                 },
             ],

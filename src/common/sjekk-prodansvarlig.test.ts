@@ -33,14 +33,7 @@ vi.mock('./prodansvarlig', () => ({
 }))
 
 describe('finnSisteMeldingFraSlackbot', () => {
-    const mockedBot: Bot = {
-        id: 'B12345',
-        name: 'Dagens prodansvar',
-        user_id: 'U12345',
-        deleted: false,
-        updated: 0,
-        app_id: 'A12345',
-    }
+    const mockedBot = 'U12345'
 
     beforeEach(() => {
         vi.resetAllMocks()
