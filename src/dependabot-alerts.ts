@@ -12,37 +12,58 @@ const repoer = hentRepoer()
 const alleBlocks = [] as (KnownBlock | Block)[][]
 
 for (const repo of repoer) {
-    console.log('Henter for repo ' + repo)
-    const dependabotAlerts = await octokit.request('GET /repos/{owner}/{repo}/dependabot/alerts', {
-        owner: 'navikt',
-        repo: repo,
-        state: 'open',
-    })
-
-    if (dependabotAlerts.data.length > 0) {
-        const blocks = [] as (KnownBlock | Block)[]
-        blocks.push({ type: 'divider' })
-        blocks.push({
-            type: 'section',
-            text: {
-                type: 'mrkdwn',
-                text: `:dependabot: :stop-sign:  * <https://www.github.com/navikt/${repo}|${repo}>*
-Har totalt <https://www.github.com/navikt/${repo}/security/dependabot|${dependabotAlerts.data.length} dependabot alerts>.
-Vi bør fikse eller lukke disse`,
-            },
+    try {
+        console.log('Henter for repo ' + repo)
+        const dependabotAlerts = await octokit.request('GET /repos/{owner}/{repo}/dependabot/alerts', {
+            owner: 'navikt',
+            repo: repo,
+            state: 'open',
         })
-        dependabotAlerts.data.map((alert, idx) => {
+
+        if (dependabotAlerts.data.length > 0) {
+            const blocks = [] as (KnownBlock | Block)[]
             blocks.push({ type: 'divider' })
             blocks.push({
                 type: 'section',
                 text: {
                     type: 'mrkdwn',
-                    text: `${numberToSlackEmoji(idx + 1)} *<${alert.html_url}|${alert.security_advisory.summary}>*`,
+                    text: `:dependabot: :stop-sign:  * <https://www.github.com/navikt/${repo}|${repo}>*
+Har totalt <https://www.github.com/navikt/${repo}/security/dependabot|${dependabotAlerts.data.length} dependabot alerts>.
+Vi bør fikse eller lukke disse`,
                 },
             })
-        })
+            dependabotAlerts.data.map((alert, idx) => {
+                blocks.push({ type: 'divider' })
+                blocks.push({
+                    type: 'section',
+                    text: {
+                        type: 'mrkdwn',
+                        text: `${numberToSlackEmoji(idx + 1)} *<${alert.html_url}|${alert.security_advisory.summary}>*`,
+                    },
+                })
+            })
 
-        alleBlocks.push(blocks)
+            alleBlocks.push(blocks)
+        } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (e: any) {
+        if (e.status == 401) {
+            await slackWebClient.chat.postMessage({
+                channel: flexDev(),
+                blocks: [
+                    {
+                        type: 'section',
+                        text: {
+                            type: 'mrkdwn',
+                            text: `Vi har kanskje Dependabot alerts! Fikk 401 fra APIet. Er access tokenet i GHA utløpt?`,
+                        },
+                    },
+                ],
+                icon_emoji: ':dependabot:',
+                username: 'Dependabot alerts',
+                text: 'Dependabot',
+            })
+            process.exit(-1)
+        }
     }
 }
 

@@ -2,7 +2,7 @@ name: code-ql-alerts
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * 2'
+    - cron: '0 8 * * 4'
 jobs:
   code-ql-alerts:
     name: code-ql-alerts
