@@ -53,6 +53,24 @@ Vi bør fikse eller lukke disse`,
         if (e.status == 404) {
             console.log(`Repo ${repo} har ikke code scanning alerts`)
         }
+        if (e.status == 401) {
+            await slackWebClient.chat.postMessage({
+                channel: flexDev(),
+                blocks: [
+                    {
+                        type: 'section',
+                        text: {
+                            type: 'mrkdwn',
+                            text: `Vi har kanskje CodeQL alerts! Fikk 401 fra APIet. Er access tokenet i GHA utløpt?`,
+                        },
+                    },
+                ],
+                icon_emoji: ':codeql:',
+                username: 'CodeQL alerts',
+                text: 'CodeQL',
+            })
+            process.exit(-1)
+        }
     }
 }
 
