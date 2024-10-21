@@ -31,7 +31,7 @@ Ny uke, nye muligheter – og i dag er du prod-ansvarlig! 🚀
 
 Dagens oppgaver er som følger:
 1. *Loggsjekk*: Ta en titt på loggene fra de siste 24 timene 🔍. Se etter feil, advarsler eller noe som ser litt mystisk ut 🧐.
-2. *Flex Funksjonell Metrikker*: Ta en kjapp kikk på de funksjonelle metrikene for Flex :grafana-metrics:
+2. *FlexyMcMetrics*: Ta en kikk på de funksjonelle metrikkene for hele siste uke i kanalen #flexinternal
 4. *Sjekk Pods*: Kontroller pods i prod og dev for eventuelle som henger eller feiler 💻.
 
 Når du har sjekket alt, reager med ✅ her eller skriv en liten oppdatering på hvordan det står til. Vi heier på deg! 💪
