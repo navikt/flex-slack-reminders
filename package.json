@@ -36,7 +36,7 @@
         "dotenv": "^16.4.5"
     },
     "devDependencies": {
-        "@navikt/eslint-config-teamsykmelding": "6.6.0",
+        "@navikt/eslint-config-teamsykmelding": "7.0.0",
         "@types/node": "^22.7.5",
         "@vercel/ncc": "^0.38.2",
         "eslint": "^8.57.1",
