@@ -16,6 +16,7 @@ export const alleFlexere: Flexer[] = [
     { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true },
     { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true },
+    { initialer: 'EHS', memberId: 'U07TAUJLXCM', prodansvar: true, flexjar: true, retro: true },
 ]
 
 export const prodansvarlige: Flexer[] = alleFlexere.filter((member) => member.prodansvar)
