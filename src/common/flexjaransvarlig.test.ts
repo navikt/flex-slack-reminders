@@ -29,6 +29,6 @@ describe('flexjaransvarlig Funksjon', () => {
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('flexjar')
         lagFil('flexjar', data)
-        expect(hentFlexjaransvarlig(38)).toEqual(flexjaransvarlige[5])
+        expect(hentFlexjaransvarlig(47)).toEqual(flexjaransvarlige[9])
     })
 })

@@ -148,8 +148,8 @@
         "datoFra": "2024-12-08",
         "datoTil": "2024-12-14",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -160,8 +160,8 @@
         "datoFra": "2024-12-15",
         "datoTil": "2024-12-21",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -172,8 +172,8 @@
         "datoFra": "2024-12-22",
         "datoTil": "2024-12-28",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -184,8 +184,8 @@
         "datoFra": "2024-12-29",
         "datoTil": "2025-01-04",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -196,8 +196,8 @@
         "datoFra": "2025-01-05",
         "datoTil": "2025-01-11",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -208,8 +208,8 @@
         "datoFra": "2025-01-12",
         "datoTil": "2025-01-18",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -220,8 +220,8 @@
         "datoFra": "2025-01-19",
         "datoTil": "2025-01-25",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -232,8 +232,8 @@
         "datoFra": "2025-01-26",
         "datoTil": "2025-02-01",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -244,8 +244,8 @@
         "datoFra": "2025-02-02",
         "datoTil": "2025-02-08",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -256,8 +256,8 @@
         "datoFra": "2025-02-09",
         "datoTil": "2025-02-15",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -268,8 +268,8 @@
         "datoFra": "2025-02-16",
         "datoTil": "2025-02-22",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -280,8 +280,8 @@
         "datoFra": "2025-02-23",
         "datoTil": "2025-03-01",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -292,8 +292,8 @@
         "datoFra": "2025-03-02",
         "datoTil": "2025-03-08",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -304,8 +304,8 @@
         "datoFra": "2025-03-09",
         "datoTil": "2025-03-15",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -316,8 +316,8 @@
         "datoFra": "2025-03-16",
         "datoTil": "2025-03-22",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -328,8 +328,8 @@
         "datoFra": "2025-03-23",
         "datoTil": "2025-03-29",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -340,8 +340,8 @@
         "datoFra": "2025-03-30",
         "datoTil": "2025-04-05",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -352,8 +352,8 @@
         "datoFra": "2025-04-06",
         "datoTil": "2025-04-12",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -364,8 +364,8 @@
         "datoFra": "2025-04-13",
         "datoTil": "2025-04-19",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -376,8 +376,8 @@
         "datoFra": "2025-04-20",
         "datoTil": "2025-04-26",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -388,8 +388,8 @@
         "datoFra": "2025-04-27",
         "datoTil": "2025-05-03",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -400,8 +400,8 @@
         "datoFra": "2025-05-04",
         "datoTil": "2025-05-10",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -412,8 +412,8 @@
         "datoFra": "2025-05-11",
         "datoTil": "2025-05-17",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -424,8 +424,8 @@
         "datoFra": "2025-05-18",
         "datoTil": "2025-05-24",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -436,8 +436,8 @@
         "datoFra": "2025-05-25",
         "datoTil": "2025-05-31",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -448,8 +448,8 @@
         "datoFra": "2025-06-01",
         "datoTil": "2025-06-07",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -460,8 +460,8 @@
         "datoFra": "2025-06-08",
         "datoTil": "2025-06-14",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -472,8 +472,8 @@
         "datoFra": "2025-06-15",
         "datoTil": "2025-06-21",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -484,8 +484,8 @@
         "datoFra": "2025-06-22",
         "datoTil": "2025-06-28",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -496,8 +496,8 @@
         "datoFra": "2025-06-29",
         "datoTil": "2025-07-05",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "HSA",
+            "memberId": "UPU6U4H9R",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -508,8 +508,8 @@
         "datoFra": "2025-07-06",
         "datoTil": "2025-07-12",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -520,8 +520,8 @@
         "datoFra": "2025-07-13",
         "datoTil": "2025-07-19",
         "ansvarlig": {
-            "initialer": "GB",
-            "memberId": "U0124V94CLR",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -532,8 +532,8 @@
         "datoFra": "2025-07-20",
         "datoTil": "2025-07-26",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -544,8 +544,8 @@
         "datoFra": "2025-07-27",
         "datoTil": "2025-08-02",
         "ansvarlig": {
-            "initialer": "HSA",
-            "memberId": "UPU6U4H9R",
+            "initialer": "ØK",
+            "memberId": "U021UJDDMHB",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -556,8 +556,8 @@
         "datoFra": "2025-08-03",
         "datoTil": "2025-08-09",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -568,8 +568,8 @@
         "datoFra": "2025-08-10",
         "datoTil": "2025-08-16",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -580,8 +580,8 @@
         "datoFra": "2025-08-17",
         "datoTil": "2025-08-23",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -592,8 +592,8 @@
         "datoFra": "2025-08-24",
         "datoTil": "2025-08-30",
         "ansvarlig": {
-            "initialer": "ØK",
-            "memberId": "U021UJDDMHB",
+            "initialer": "EHS",
+            "memberId": "U07TAUJLXCM",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -604,8 +604,8 @@
         "datoFra": "2025-08-31",
         "datoTil": "2025-09-06",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
@@ -616,8 +616,8 @@
         "datoFra": "2025-09-07",
         "datoTil": "2025-09-13",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "GB",
+            "memberId": "U0124V94CLR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true
