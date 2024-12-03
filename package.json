@@ -33,7 +33,7 @@
         "@slack/types": "^2.14.0",
         "@slack/web-api": "^7.7.0",
         "dayjs": "^1.11.13",
-        "dotenv": "^16.4.5"
+        "dotenv": "^16.4.6"
     },
     "devDependencies": {
         "@navikt/eslint-config-teamsykmelding": "6.6.0",
