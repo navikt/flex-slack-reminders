@@ -11,6 +11,8 @@
         "dependabot-alerts": "ncc run src/dependabot-alerts.ts",
         "gamle-trello-kort": "ncc run src/gamle-trello-kort.ts",
         "ny-uke": "ncc run src/ny-uke.ts",
+        "build-friday-wins-reminder": "ncc build src/friday-wins-reminder.ts -o build",
+        "friday-wins-reminder": "ncc run src/friday-wins-reminder.ts",
         "code-ql-alerts": "ncc run src/codeql-alerts.ts",
         "build-flexjaransvar": "ncc build src/flexjaransvar.ts -o build",
         "build-prodansvar": "ncc build src/prodansvar.ts -o build",

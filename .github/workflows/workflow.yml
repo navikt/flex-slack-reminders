@@ -27,3 +27,4 @@ jobs:
       - run: npm run build-flexjaransvar
       - run: npm run build-code-ql
       - run: npm run build-retroansvar
+      - run: npm run build-friday-wins-reminder
