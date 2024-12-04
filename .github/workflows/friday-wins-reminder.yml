@@ -1,0 +1,30 @@
+name: friday-wins-reminder
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 9 * * 3'
+jobs:
+  prodansvar:
+    name: friday-wins-reminder
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sjekk om det er oddetallsuke
+        run: |
+          WEEK_NUMBER=$(date +'%V')
+          DAY_OF_MONTH=$(date +'%d')
+          if [ $((WEEK_NUMBER % 2)) -ne 1 ]; then
+            exit 1
+          fi
+      - name: Varsle om Friday Wins
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run friday-wins-reminder
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
