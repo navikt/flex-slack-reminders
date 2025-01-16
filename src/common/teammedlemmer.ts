@@ -13,7 +13,7 @@ export const alleFlexere: Flexer[] = [
     { initialer: 'PB', memberId: 'UE89E1WTY', flexjar: true, retro: true, bursdag: '09-19' },
     { initialer: 'TM', memberId: 'U06QFQVELJF', flexjar: true, retro: true, bursdag: '03-16' },
     { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true, bursdag: '01-05' },
-    { initialer: 'GB', memberId: 'U0124V94CLR', prodansvar: true, flexjar: true, retro: true, bursdag: '03-08' },
+    { initialer: 'GB', memberId: 'U0124V94CLR', prodansvar: true, flexjar: true, retro: true, bursdag: '17-01' },
     { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true, bursdag: '06-13' },
     { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true, bursdag: '02-27' },
     { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true, bursdag: '01-29' },
