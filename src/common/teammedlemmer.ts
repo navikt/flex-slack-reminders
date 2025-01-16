@@ -4,19 +4,20 @@ export interface Flexer {
     prodansvar?: boolean
     flexjar?: boolean
     retro?: boolean
+    bursdag?: string
 }
 
 export const alleFlexere: Flexer[] = [
-    { initialer: 'ATS', memberId: 'U04HMSMPTKK', flexjar: true, retro: true },
-    { initialer: 'MV', memberId: 'U06QE5KETL2', flexjar: true, retro: true },
-    { initialer: 'PB', memberId: 'UE89E1WTY', flexjar: true, retro: true },
-    { initialer: 'TM', memberId: 'U06QFQVELJF', flexjar: true, retro: true },
-    { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'GB', memberId: 'U0124V94CLR', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true },
-    { initialer: 'EHS', memberId: 'U07TAUJLXCM', prodansvar: true, flexjar: true, retro: true },
+    { initialer: 'ATS', memberId: 'U04HMSMPTKK', flexjar: true, retro: true, bursdag: '03-08' },
+    { initialer: 'MV', memberId: 'U06QE5KETL2', flexjar: true, retro: true, bursdag: '02-01' },
+    { initialer: 'PB', memberId: 'UE89E1WTY', flexjar: true, retro: true, bursdag: '09-19' },
+    { initialer: 'TM', memberId: 'U06QFQVELJF', flexjar: true, retro: true, bursdag: '03-16' },
+    { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true, bursdag: '01-05' },
+    { initialer: 'GB', memberId: 'U0124V94CLR', prodansvar: true, flexjar: true, retro: true, bursdag: '17-01' },
+    { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true, bursdag: '06-13' },
+    { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true, bursdag: '02-27' },
+    { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true, bursdag: '01-29' },
+    { initialer: 'EHS', memberId: 'U07TAUJLXCM', prodansvar: true, flexjar: true, retro: true, bursdag: '02-15' },
 ]
 
 export const prodansvarlige: Flexer[] = alleFlexere.filter((member) => member.prodansvar)
@@ -24,3 +25,5 @@ export const prodansvarlige: Flexer[] = alleFlexere.filter((member) => member.pr
 export const flexjaransvarlige: Flexer[] = alleFlexere.filter((member) => member.flexjar)
 
 export const retroansvarlige: Flexer[] = alleFlexere.filter((member) => member.retro)
+
+export const bursdagsbarna: Flexer[] = alleFlexere.filter((member) => member.bursdag)

@@ -1,0 +1,22 @@
+name: bursdag-reminder
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'
+jobs:
+  prodansvar:
+    name: bursdag-reminder
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run bursdag-reminder
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
