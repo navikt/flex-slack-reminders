@@ -12,7 +12,7 @@ if (dagensBursdager.length > 0) {
     const melding = dagensBursdager
         .map(
             (member) =>
-                `:alphabet-white-g::alphabet-white-r::alphabet-white-a::alphabet-white-t::alphabet-white-u::alphabet-white-l::alphabet-white-e::alphabet-white-r::alphabet-white-e::alphabet-white-r: :alphabet-white-m::alphabet-white-e::alphabet-white-d: :alphabet-white-d::alphabet-white-a::alphabet-white-g::alphabet-white-e::alphabet-white-n: ${member.initialer}! 🎉🎂`,
+                `:alphabet-white-g::alphabet-white-r::alphabet-white-a::alphabet-white-t::alphabet-white-u::alphabet-white-l::alphabet-white-e::alphabet-white-r::alphabet-white-e::alphabet-white-r: :alphabet-white-m::alphabet-white-e::alphabet-white-d: :alphabet-white-d::alphabet-white-a::alphabet-white-g::alphabet-white-e::alphabet-white-n:  <@${member.memberId}>! 🎉🎂`,
         )
         .join('\n')
 
@@ -27,7 +27,7 @@ if (dagensBursdager.length > 0) {
                 },
             },
         ],
-        icon_emoji: ':birthday-fluff:',
+        icon_emoji: ':tada:',
         username: 'Bursdagsliste',
         text: 'Bursdagspåminnelse',
     })
