@@ -6,30 +6,30 @@ import { flexjaransvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
 import { lagFil } from './util/fil'
 
+const testDato = dayjs('2025-04-21')
+
 describe('flexjaransvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
-        const testDato = dayjs('2023-06-03')
         const ansvarlig = flexjaransvarlig(testDato)
         expect(ansvarlig).toEqual(flexjaransvarlige[0])
     })
 
     it('skal rotere til neste medlem etter en uke', () => {
-        const testDato = dayjs('2023-06-03').add(7, 'days')
-        const ansvarlig = flexjaransvarlig(testDato)
+        const datoNesteUke = testDato.add(7, 'days')
+        const ansvarlig = flexjaransvarlig(datoNesteUke)
         expect(ansvarlig).toEqual(flexjaransvarlige[1])
     })
 
     it('skal rotere korrekt etter flere ukentlige intervaller', () => {
-        const ukerAaLeggeTil = flexjaransvarlige.length // Fullfører én full rotasjon
-        const testDato = dayjs('2023-06-03').add(ukerAaLeggeTil, 'weeks')
-        const ansvarlig = flexjaransvarlig(testDato)
+        const datoEtterFullRotasjon = testDato.add(flexjaransvarlige.length, 'weeks')
+        const ansvarlig = flexjaransvarlig(datoEtterFullRotasjon)
         expect(ansvarlig).toEqual(flexjaransvarlige[0]) // Skal rotere tilbake til det første medlemmet
     })
 
-    it('skal generere fil og hente inn data fra filen', () => {
-        const data = genererUkeData('flexjar')
+    it('skal generere fil og hente data fra filen', () => {
+        const data = genererUkeData('flexjar', dayjs(testDato))
         lagFil('flexjar', data)
-        const flexjaransvarlig = hentFlexjaransvarlig(17)
+        const flexjaransvarlig = hentFlexjaransvarlig()
         expect(flexjaransvarlig.flexjar).toBeTruthy
     })
 })

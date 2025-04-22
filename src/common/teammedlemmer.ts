@@ -8,6 +8,7 @@ export interface Flexer {
 }
 
 export const alleFlexere: Flexer[] = [
+    { initialer: 'EHS', memberId: 'U07TAUJLXCM', prodansvar: true, flexjar: true, retro: true, bursdag: '02-15' },
     { initialer: 'ATS', memberId: 'U04HMSMPTKK', flexjar: true, retro: true, bursdag: '12-06' },
     { initialer: 'MV', memberId: 'U06QE5KETL2', flexjar: true, retro: true, bursdag: '02-01' },
     { initialer: 'PB', memberId: 'UE89E1WTY', flexjar: true, retro: true, bursdag: '09-19' },
@@ -16,7 +17,6 @@ export const alleFlexere: Flexer[] = [
     { initialer: 'HSA', memberId: 'UPU6U4H9R', prodansvar: true, flexjar: true, retro: true, bursdag: '06-13' },
     { initialer: 'OBL', memberId: 'U06FTG7L532', prodansvar: true, flexjar: true, retro: true, bursdag: '02-27' },
     { initialer: 'ØK', memberId: 'U021UJDDMHB', prodansvar: true, flexjar: true, retro: true, bursdag: '01-29' },
-    { initialer: 'EHS', memberId: 'U07TAUJLXCM', prodansvar: true, flexjar: true, retro: true, bursdag: '02-15' },
 ]
 
 export const prodansvarlige: Flexer[] = alleFlexere.filter((member) => member.prodansvar)
