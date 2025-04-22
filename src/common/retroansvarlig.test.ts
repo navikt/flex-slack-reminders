@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import dayjs from 'dayjs'
 
 import { hentRetroAnsvarlig, retroansvarlig } from './retroansvarlig'
@@ -10,8 +10,7 @@ const startDato = dayjs('2024-09-15')
 
 describe('retroansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
-        const testDato = startDato
-        const ansvarlig = retroansvarlig(testDato)
+        const ansvarlig = retroansvarlig(startDato)
         expect(ansvarlig).toEqual(retroansvarlige[0])
     })
 
@@ -53,7 +52,7 @@ describe('retroansvarlig Funksjon', () => {
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('retro')
         lagFil('retro', data)
-        let retroAnsvarlig = hentRetroAnsvarlig(47)
+        const retroAnsvarlig = hentRetroAnsvarlig(47)
         expect(retroAnsvarlig.retro).toBeTruthy
     })
 })
