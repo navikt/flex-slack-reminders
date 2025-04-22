@@ -4,8 +4,8 @@ import { Dayjs } from 'dayjs'
 import { Flexer, prodansvarlige } from './teammedlemmer'
 import { hentAnsvarligFraFil } from './util/fil'
 
-export function prodansvarlig(dagensDato?: Dayjs): { initialer: string; memberId: string } {
-    const startDate = dayjs('2024-09-15')
+export function prodansvarlig(dagensDato?: Dayjs, startDato?: Dayjs): { initialer: string; memberId: string } {
+    const startDate = startDato || dayjs('2025-03-25')
     const currentDate = dagensDato || dayjs()
 
     // Beregn ukeforskjellen basert på nåværende uke
