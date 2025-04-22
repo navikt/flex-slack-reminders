@@ -30,6 +30,6 @@ describe('flexjaransvarlig Funksjon', () => {
         const data = genererUkeData('flexjar', dayjs(testDato))
         lagFil('flexjar', data)
         const flexjaransvarlig = hentFlexjaransvarlig()
-        expect(flexjaransvarlig.flexjar).toBeTruthy
+        expect(flexjaransvarlig.flexjar).toBeTruthy()
     })
 })
