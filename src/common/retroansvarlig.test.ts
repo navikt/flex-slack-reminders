@@ -53,6 +53,6 @@ describe('retroansvarlig Funksjon', () => {
         const data = genererUkeData('retro')
         lagFil('retro', data)
         const retroAnsvarlig = hentRetroAnsvarlig(47)
-        expect(retroAnsvarlig.retro).toBeTruthy
+        expect(retroAnsvarlig.retro).toBeTruthy()
     })
 })
