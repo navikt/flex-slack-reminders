@@ -33,7 +33,7 @@
         "test:ci": "vitest --run"
     },
     "dependencies": {
-        "@octokit/rest": "^21.1.1",
+        "@octokit/rest": "^22.0.0",
         "@slack/types": "^2.14.0",
         "@slack/web-api": "^7.9.2",
         "dayjs": "^1.11.13",
