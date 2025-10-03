@@ -6,7 +6,7 @@ import weekOfYear from 'dayjs/plugin/weekOfYear'
 import { retroansvarlig } from './retroansvarlig'
 import { flexjaransvarlig } from './flexjaransvarlig'
 import { prodansvarlig } from './prodansvarlig'
-import { Flexer } from './teammedlemmer'
+import { Flexer, prodansvarlige } from './teammedlemmer'
 
 dayjs.extend(weekOfYear)
 
@@ -17,7 +17,7 @@ export interface UkeData {
     ansvarlig: Flexer
 }
 
-export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Dayjs): UkeData[] {
+export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Dayjs, startPerson?: Flexer): UkeData[] {
     const ukeDataListe: UkeData[] = []
 
     const idag = start || dayjs()
@@ -37,7 +37,15 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Day
                 case 'flexjar':
                     return flexjaransvarlig(ukeStart)
                 case 'prod':
-                    return prodansvarlig(ukeStart)
+                    if (startPerson) {
+                        // Bruk custom logikk for prod med startperson
+                        const startIndex = prodansvarlige.findIndex((p) => p.initialer === startPerson.initialer)
+                        const biWeeksSinceStart = Math.floor(i / 2)
+                        const ansvarligIndex = (startIndex + biWeeksSinceStart) % prodansvarlige.length
+                        return prodansvarlige[ansvarligIndex]
+                    } else {
+                        return prodansvarlig(ukeStart)
+                    }
             }
         }
 
