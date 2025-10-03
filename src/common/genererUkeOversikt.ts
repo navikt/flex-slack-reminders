@@ -23,6 +23,15 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Day
     const idag = start || dayjs()
     const startDato = idag.startOf('week') // Mandag i inneværende uke
 
+    // Hjelpefunksjon for å beregne ansvarlig med startPerson
+    const beregnAnsvarligMedStartPerson = (ansvarstype: 'retro' | 'prod', ukeIndex: number): Flexer => {
+        const ansvarligeArray = ansvarstype === 'retro' ? retroansvarlige : prodansvarlige
+        const startIndex = ansvarligeArray.findIndex((p) => p.initialer === startPerson!.initialer)
+        const biWeeksSinceStart = Math.floor(ukeIndex / 2)
+        const ansvarligIndex = (startIndex + biWeeksSinceStart) % ansvarligeArray.length
+        return ansvarligeArray[ansvarligIndex]
+    }
+
     //1 år frem
     for (let i = 0; i < 52; i++) {
         const ukeStart = startDato.add(i, 'week')
@@ -33,27 +42,11 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Day
         const ansvarlig = (): Flexer => {
             switch (ansvar) {
                 case 'retro':
-                    if (startPerson) {
-                        // Bruk custom logikk for retro med startperson
-                        const startIndex = retroansvarlige.findIndex(p => p.initialer === startPerson.initialer)
-                        const biWeeksSinceStart = Math.floor(i / 2)
-                        const ansvarligIndex = (startIndex + biWeeksSinceStart) % retroansvarlige.length
-                        return retroansvarlige[ansvarligIndex]
-                    } else {
-                        return retroansvarlig(ukeStart)
-                    }
+                    return startPerson ? beregnAnsvarligMedStartPerson('retro', i) : retroansvarlig(ukeStart)
                 case 'flexjar':
                     return flexjaransvarlig(ukeStart)
                 case 'prod':
-                    if (startPerson) {
-                        // Bruk custom logikk for prod med startperson
-                        const startIndex = prodansvarlige.findIndex(p => p.initialer === startPerson.initialer)
-                        const biWeeksSinceStart = Math.floor(i / 2)
-                        const ansvarligIndex = (startIndex + biWeeksSinceStart) % prodansvarlige.length
-                        return prodansvarlige[ansvarligIndex]
-                    } else {
-                        return prodansvarlig(ukeStart)
-                    }
+                    return startPerson ? beregnAnsvarligMedStartPerson('prod', i) : prodansvarlig(ukeStart)
             }
         }
 

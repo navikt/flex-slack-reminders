@@ -49,14 +49,14 @@ if (ukeInput) {
 if (personInput) {
     const personInitialer = personInput.toUpperCase()
     console.log(`🔍 Søker etter person med initialer: ${personInitialer}`)
-    startPerson = retroansvarlige.find(p => p.initialer === personInitialer)
+    startPerson = retroansvarlige.find((p) => p.initialer === personInitialer)
 
     if (startPerson) {
         console.log(`✅  ${startPerson.initialer} starter som retro-ansvarlig fra uke ${startUke}`)
     } else {
         console.log(`❌ Ukjente initialer: ${personInitialer}`)
         console.log('📋 Tilgjengelige retro-ansvarlige:')
-        retroansvarlige.forEach(p => console.log(`  - ${p.initialer}`))
+        retroansvarlige.forEach((p) => console.log(`  - ${p.initialer}`))
         process.exit(1)
     }
 } else {
