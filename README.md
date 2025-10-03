@@ -7,7 +7,14 @@ Generer ansvar-filene ved å kjøre testene
 ### Generer retro-ansvar
 
 ```bash
+# Standard bruk (starter fra dagens uke med normal rotasjon)
 ncc run src/generer-retro.ts
+
+# Med environment variabler (anbefalt)
+START_UKE=40 START_PERSON=MV ncc run src/generer-retro.ts
+
+# Alternativt med kommandolinje-argumenter
+npx ts-node src/generer-retro.ts 40 PB
 ```
 
 ### Generer flexjar-ansvar
