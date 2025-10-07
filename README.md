@@ -1,7 +1,5 @@
 # flex-slack-reminders
 
-Generer ansvar-filene ved å kjøre testene
-
 ## Bruk av generatorer
 
 ### Generer retro-ansvar
@@ -11,7 +9,7 @@ Generer ansvar-filene ved å kjøre testene
 ncc run src/generer-retro.ts
 
 # Med environment variabler (anbefalt)
-START_UKE=40 START_PERSON=MV ncc run src/generer-retro.ts
+START_UKE=40 START_PERSON=PB ncc run src/generer-retro.ts
 
 # Alternativt med kommandolinje-argumenter
 npx ts-node src/generer-retro.ts 40 PB
@@ -20,7 +18,14 @@ npx ts-node src/generer-retro.ts 40 PB
 ### Generer flexjar-ansvar
 
 ```bash
+# Standard bruk (starter fra dagens uke med normal rotasjon)
 ncc run src/generer-flexjar.ts
+
+# Med environment variabler (anbefalt)
+START_UKE=40 START_PERSON=SSH ncc run src/generer-flexjar.ts
+
+# Alternativt med kommandolinje-argumenter
+npx ts-node src/generer-flexjar.ts 40 SSH
 ```
 
 ### Generer prod-ansvar

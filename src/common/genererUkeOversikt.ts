@@ -6,7 +6,7 @@ import weekOfYear from 'dayjs/plugin/weekOfYear'
 import { retroansvarlig } from './retroansvarlig'
 import { flexjaransvarlig } from './flexjaransvarlig'
 import { prodansvarlig } from './prodansvarlig'
-import { Flexer, prodansvarlige, retroansvarlige } from './teammedlemmer'
+import { Flexer, prodansvarlige, retroansvarlige, flexjaransvarlige } from './teammedlemmer'
 
 dayjs.extend(weekOfYear)
 
@@ -24,11 +24,24 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Day
     const startDato = idag.startOf('week') // Mandag i inneværende uke
 
     // Hjelpefunksjon for å beregne ansvarlig med startPerson
-    const beregnAnsvarligMedStartPerson = (ansvarstype: 'retro' | 'prod', ukeIndex: number): Flexer => {
-        const ansvarligeArray = ansvarstype === 'retro' ? retroansvarlige : prodansvarlige
-        const startIndex = ansvarligeArray.findIndex((p) => p.initialer === startPerson!.initialer)
-        const biWeeksSinceStart = Math.floor(ukeIndex / 2)
-        const ansvarligIndex = (startIndex + biWeeksSinceStart) % ansvarligeArray.length
+    const beregnAnsvarligMedStartPerson = (ansvarstype: 'retro' | 'flexjar' | 'prod', ukeIndex: number): Flexer => {
+        let ansvarligeArray: Flexer[]
+        let weeksSinceStart: number
+
+        switch (ansvarstype) {
+            case 'retro':
+            case 'prod':
+                ansvarligeArray = ansvarstype === 'retro' ? retroansvarlige : prodansvarlige
+                weeksSinceStart = Math.floor(ukeIndex / 2) // Bi-ukentlig rotasjon
+                break
+            case 'flexjar':
+                ansvarligeArray = flexjaransvarlige
+                weeksSinceStart = ukeIndex // Ukentlig rotasjon
+                break
+        }
+
+        const startIndex = ansvarligeArray.findIndex(p => p.initialer === startPerson!.initialer)
+        const ansvarligIndex = (startIndex + weeksSinceStart) % ansvarligeArray.length
         return ansvarligeArray[ansvarligIndex]
     }
 
@@ -44,7 +57,7 @@ export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Day
                 case 'retro':
                     return startPerson ? beregnAnsvarligMedStartPerson('retro', i) : retroansvarlig(ukeStart)
                 case 'flexjar':
-                    return flexjaransvarlig(ukeStart)
+                    return startPerson ? beregnAnsvarligMedStartPerson('flexjar', i) : flexjaransvarlig(ukeStart)
                 case 'prod':
                     return startPerson ? beregnAnsvarligMedStartPerson('prod', i) : prodansvarlig(ukeStart)
             }
