@@ -10,7 +10,7 @@ const startDato = dayjs('2024-09-15')
 let tempFilePaths: string[] = []
 
 afterEach(() => {
-    tempFilePaths.forEach(filePath => slettTempFil(filePath))
+    tempFilePaths.forEach((filePath) => slettTempFil(filePath))
     tempFilePaths = []
 })
 
