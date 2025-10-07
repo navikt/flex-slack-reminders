@@ -54,4 +54,30 @@ describe('prodansvarlig Funksjon', () => {
         lagFil('prod', data)
         expect(hentProdansvarlig().prodansvar).toBeTruthy()
     })
+
+    it('skal generere data med tilpasset startperson', () => {
+        const startPerson = prodansvarlige[1] // Velg andre person i listen
+        const data = genererUkeData('prod', startDato, startPerson)
+
+        expect(data[0].ansvarlig).toEqual(startPerson)
+        expect(data[1].ansvarlig).toEqual(startPerson) // Bi-ukentlig rotasjon
+        expect(data[2].ansvarlig).toEqual(prodansvarlige[2]) // Neste person etter 2 uker
+    })
+
+    it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
+        const startPerson = prodansvarlige[2] // Start med tredje person
+        const data = genererUkeData('prod', startDato, startPerson)
+
+        // Første bi-uke
+        expect(data[0].ansvarlig).toEqual(prodansvarlige[2])
+        expect(data[1].ansvarlig).toEqual(prodansvarlige[2])
+
+        // Andre bi-uke
+        expect(data[2].ansvarlig).toEqual(prodansvarlige[3])
+        expect(data[3].ansvarlig).toEqual(prodansvarlige[3])
+
+        // Tredje bi-uke (skal wrappe rundt til start av listen)
+        const nestePerson = prodansvarlige[0] // Wrapping til start
+        expect(data[4].ansvarlig).toEqual(nestePerson)
+    })
 })
