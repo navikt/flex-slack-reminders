@@ -1,12 +1,18 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
 import { hentRetroAnsvarlig, retroansvarlig } from './retroansvarlig'
 import { retroansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const startDato = dayjs('2024-09-15')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach(filePath => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('retroansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -51,9 +57,11 @@ describe('retroansvarlig Funksjon', () => {
 
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('retro')
-        lagFil('retro', data)
-        const retroAnsvarlig = hentRetroAnsvarlig(47)
-        expect(retroAnsvarlig.retro).toBeTruthy()
+        const tempFilePath = lagTempFil('retro', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.retro).toBeTruthy()
     })
 
     it('skal generere data med tilpasset startperson', () => {

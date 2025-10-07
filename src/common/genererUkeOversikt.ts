@@ -15,7 +15,7 @@ export interface UkeData {
     ansvarlig: Flexer
 }
 
-type AnsvarType = 'retro' | 'flexjar' | 'prod'
+export type AnsvarType = 'retro' | 'flexjar' | 'prod'
 
 const UKER_I_AAR = 52
 const BI_UKENTLIG_DIVISOR = 2

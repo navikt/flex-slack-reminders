@@ -1,12 +1,18 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
 import { hentProdansvarlig, prodansvarlig } from './prodansvarlig'
 import { prodansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const startDato = dayjs('2025-04-21')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach(filePath => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('prodansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -51,8 +57,11 @@ describe('prodansvarlig Funksjon', () => {
 
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('prod', startDato)
-        lagFil('prod', data)
-        expect(hentProdansvarlig().prodansvar).toBeTruthy()
+        const tempFilePath = lagTempFil('prod', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.prodansvar).toBeTruthy()
     })
 
     it('skal generere data med tilpasset startperson', () => {

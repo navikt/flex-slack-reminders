@@ -1,15 +1,16 @@
 import path from 'node:path'
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync, unlinkSync } from 'node:fs'
 import { readFileSync } from 'fs'
+import { tmpdir } from 'node:os'
 
 import dayjs from 'dayjs'
 
-import { UkeData } from '../genererUkeOversikt'
+import { AnsvarType, UkeData } from '../genererUkeOversikt'
 import { Flexer } from '../teammedlemmer'
 
 const outputDir = path.join(process.cwd(), 'ukeoversikt')
 
-export function lagFil(ansvar: 'retro' | 'flexjar' | 'prod', data: UkeData[]): void {
+export function lagFil(ansvar: AnsvarType, data: UkeData[]): void {
     console.log(`📁 lagFil kalt med ansvar: '${ansvar}', data lengde: ${data.length}`)
 
     // Sjekk om 'ukeoversikt' mappen eksisterer, og opprett den hvis ikke
@@ -46,8 +47,24 @@ function hentDataForUkenummer(filbane: string, ukenummer: number): UkeData {
     }
 }
 
-export function hentAnsvarligFraFil(ansvar: 'retro' | 'flexjar' | 'prod', uke?: number): Flexer {
+export function hentAnsvarligFraFil(ansvar: AnsvarType, uke?: number): Flexer {
     const filbane = `ukeoversikt/${ansvar}-ansvarlig.json`
     const ukenummer = uke || dayjs().week()
     return hentDataForUkenummer(filbane, ukenummer).ansvarlig
+}
+
+export function lagTempFil(ansvar: AnsvarType, data: UkeData[]): string {
+    const tempDir = tmpdir()
+    const tempFilePath = path.join(tempDir, `test-${ansvar}-ansvarlig-${Date.now()}.json`)
+
+    const jsonData = JSON.stringify(data, null, 2)
+    writeFileSync(tempFilePath, jsonData)
+
+    return tempFilePath
+}
+
+export function slettTempFil(filePath: string): void {
+    if (existsSync(filePath)) {
+        unlinkSync(filePath)
+    }
 }

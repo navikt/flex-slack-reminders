@@ -1,12 +1,18 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
 import { hentFlexjaransvarlig, flexjaransvarlig } from './flexjaransvarlig'
 import { flexjaransvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const testDato = dayjs('2025-04-21')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach(filePath => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('flexjaransvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -28,9 +34,11 @@ describe('flexjaransvarlig Funksjon', () => {
 
     it('skal generere fil og hente data fra filen', () => {
         const data = genererUkeData('flexjar', dayjs(testDato))
-        lagFil('flexjar', data)
-        const flexjaransvarlig = hentFlexjaransvarlig()
-        expect(flexjaransvarlig.flexjar).toBeTruthy()
+        const tempFilePath = lagTempFil('flexjar', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.flexjar).toBeTruthy()
     })
 
     it('skal generere data med tilpasset startperson', () => {
