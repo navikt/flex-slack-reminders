@@ -1,10 +1,11 @@
-name: Bygg og lint
+name: CI/CD Pipeline
 on:
   workflow_dispatch:
   push:
+
 jobs:
-  build-and-lint:
-    name: Bygg og lint
+  test:
+    name: Kjør tester
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -17,16 +18,60 @@ jobs:
         run: npm ci
         env:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm run prettier:check
-      - run: npm run lint
-      - run: npm test -- --run
-      - run: npm run build-stale-pull-request
-      - run: npm run build-dependabot-alerts
-      - run: npm run build-gamle-trello-kort
-      - run: npm run build-prodansvar
-      - run: npm run build-sjekk-prodansvar
-      - run: npm run build-flexjaransvar
-      - run: npm run build-code-ql
-      - run: npm run build-retroansvar
-      - run: npm run build-friday-wins-reminder
-      - run: npm run build-bursdag-reminder
+      - name: Kjør tester
+        run: npm test -- --run
+
+  lint:
+    name: Lint og formatering
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Sjekk formatering
+        run: npm run prettier:check
+      - name: Lint kode
+        run: npm run lint
+
+  build:
+    name: Bygg alle komponenter
+    runs-on: ubuntu-latest
+    needs: [test, lint]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Bygg stale-pull-request
+        run: npm run build-stale-pull-request
+      - name: Bygg dependabot-alerts
+        run: npm run build-dependabot-alerts
+      - name: Bygg gamle-trello-kort
+        run: npm run build-gamle-trello-kort
+      - name: Bygg prodansvar
+        run: npm run build-prodansvar
+      - name: Bygg sjekk-prodansvar
+        run: npm run build-sjekk-prodansvar
+      - name: Bygg flexjaransvar
+        run: npm run build-flexjaransvar
+      - name: Bygg code-ql
+        run: npm run build-code-ql
+      - name: Bygg retroansvar
+        run: npm run build-retroansvar
+      - name: Bygg friday-wins-reminder
+        run: npm run build-friday-wins-reminder
+      - name: Bygg bursdag-reminder
+        run: npm run build-bursdag-reminder
