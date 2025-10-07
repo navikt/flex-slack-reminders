@@ -1,7 +1,7 @@
 import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
-import { hentFlexjaransvarlig, flexjaransvarlig } from './flexjaransvarlig'
+import { flexjaransvarlig } from './flexjaransvarlig'
 import { flexjaransvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
 import { lagTempFil, slettTempFil } from './util/fil'

@@ -1,7 +1,7 @@
 import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
-import { hentRetroAnsvarlig, retroansvarlig } from './retroansvarlig'
+import { retroansvarlig } from './retroansvarlig'
 import { retroansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
 import { lagTempFil, slettTempFil } from './util/fil'
