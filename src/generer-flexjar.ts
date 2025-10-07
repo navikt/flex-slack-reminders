@@ -49,14 +49,14 @@ if (ukeInput) {
 if (personInput) {
     const personInitialer = personInput.toUpperCase()
     console.log(`🔍 Søker etter person med initialer: ${personInitialer}`)
-    startPerson = flexjaransvarlige.find(p => p.initialer === personInitialer)
+    startPerson = flexjaransvarlige.find((p) => p.initialer === personInitialer)
 
     if (startPerson) {
         console.log(`✅  ${startPerson.initialer} starter som flexjar-ansvarlig fra uke ${startUke}`)
     } else {
         console.log(`❌ Ukjente initialer: ${personInitialer}`)
         console.log('📋 Tilgjengelige flexjar-ansvarlige:')
-        flexjaransvarlige.forEach(p => console.log(`  - ${p.initialer}`))
+        flexjaransvarlige.forEach((p) => console.log(`  - ${p.initialer}`))
         process.exit(1)
     }
 } else {
