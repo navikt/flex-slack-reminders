@@ -1,65 +1,79 @@
-import { readFileSync } from 'fs'
-
 import dayjs, { Dayjs } from 'dayjs'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 
 import { retroansvarlig } from './retroansvarlig'
 import { flexjaransvarlig } from './flexjaransvarlig'
 import { prodansvarlig } from './prodansvarlig'
-import { Flexer } from './teammedlemmer'
+import { Flexer, flexjaransvarlige, prodansvarlige, retroansvarlige } from './teammedlemmer'
 
 dayjs.extend(weekOfYear)
 
 export interface UkeData {
     ukenummer: number
-    datoFra: string // ISO dato
-    datoTil: string // ISO dato
+    datoFra: string
+    datoTil: string
     ansvarlig: Flexer
 }
 
-export function genererUkeData(ansvar: 'retro' | 'flexjar' | 'prod', start?: Dayjs): UkeData[] {
+export type AnsvarType = 'retro' | 'flexjar' | 'prod'
+
+const UKER_I_AAR = 52
+const BI_UKENTLIG_DIVISOR = 2
+
+function hentAnsvarligeForType(ansvarType: AnsvarType): Flexer[] {
+    const ansvarligeMap = {
+        retro: retroansvarlige,
+        flexjar: flexjaransvarlige,
+        prod: prodansvarlige,
+    }
+    return ansvarligeMap[ansvarType]
+}
+
+function beregnUkerSidenStart(ansvarType: AnsvarType, ukeIndeks: number): number {
+    const erBiUkentligRotasjon = ansvarType === 'retro' || ansvarType === 'prod'
+    return erBiUkentligRotasjon ? Math.floor(ukeIndeks / BI_UKENTLIG_DIVISOR) : ukeIndeks
+}
+
+function beregnAnsvarligMedTilpassetStart(ansvarType: AnsvarType, ukeIndeks: number, startPerson: Flexer): Flexer {
+    const ansvarligeArray = hentAnsvarligeForType(ansvarType)
+    const ukerSidenStart = beregnUkerSidenStart(ansvarType, ukeIndeks)
+    const startIndeks = ansvarligeArray.findIndex((person) => person.initialer === startPerson.initialer)
+    const ansvarligIndeks = (startIndeks + ukerSidenStart) % ansvarligeArray.length
+
+    return ansvarligeArray[ansvarligIndeks]
+}
+
+function hentAnsvarligForUke(ansvarType: AnsvarType, ukeStart: Dayjs, ukeIndeks: number, startPerson?: Flexer): Flexer {
+    if (startPerson) {
+        return beregnAnsvarligMedTilpassetStart(ansvarType, ukeIndeks, startPerson)
+    }
+
+    const standardFunksjoner = {
+        retro: retroansvarlig,
+        flexjar: flexjaransvarlig,
+        prod: prodansvarlig,
+    }
+
+    return standardFunksjoner[ansvarType](ukeStart)
+}
+
+export function genererUkeData(ansvarType: AnsvarType, startDato?: Dayjs, startPerson?: Flexer): UkeData[] {
     const ukeDataListe: UkeData[] = []
+    const faktiskStartDato = (startDato || dayjs()).startOf('week')
 
-    const idag = start || dayjs()
-    const startDato = idag.startOf('week') // Mandag i inneværende uke
-
-    //1 år frem
-    for (let i = 0; i < 52; i++) {
-        const ukeStart = startDato.add(i, 'week')
-        const ukeSlutt = ukeStart.endOf('week')
-
-        const ukenummer = ukeStart.week()
-
-        const ansvarlig = (): Flexer => {
-            switch (ansvar) {
-                case 'retro':
-                    return retroansvarlig(ukeStart)
-                case 'flexjar':
-                    return flexjaransvarlig(ukeStart)
-                case 'prod':
-                    return prodansvarlig(ukeStart)
-            }
-        }
+    for (let ukeIndeks = 0; ukeIndeks < UKER_I_AAR; ukeIndeks++) {
+        const mandagIUken = faktiskStartDato.add(ukeIndeks, 'week')
+        const sondagIUken = mandagIUken.endOf('week')
+        const ukenummer = mandagIUken.week()
+        const ansvarlig = hentAnsvarligForUke(ansvarType, mandagIUken, ukeIndeks, startPerson)
 
         ukeDataListe.push({
-            ukenummer: ukenummer,
-            datoFra: ukeStart.format('YYYY-MM-DD'),
-            datoTil: ukeSlutt.format('YYYY-MM-DD'),
-            ansvarlig: ansvarlig(),
+            ukenummer,
+            datoFra: mandagIUken.format('YYYY-MM-DD'),
+            datoTil: sondagIUken.format('YYYY-MM-DD'),
+            ansvarlig,
         })
     }
 
     return ukeDataListe
-}
-
-export function hentDataForUkenummer(filbane: string, ukenummer: number): UkeData {
-    try {
-        const jsonData = readFileSync(filbane, 'utf-8')
-        const data = JSON.parse(jsonData)
-        const resultat = data.find((uke: UkeData) => uke.ukenummer === ukenummer)
-        return resultat ? resultat : `Ingen data funnet for ukenummer: ${ukenummer}`
-    } catch (error) {
-        console.error('Feil ved lesing av filen:', error)
-        throw error
-    }
 }

@@ -1,12 +1,18 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
-import { hentFlexjaransvarlig, flexjaransvarlig } from './flexjaransvarlig'
+import { flexjaransvarlig } from './flexjaransvarlig'
 import { flexjaransvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const testDato = dayjs('2025-04-21')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach((filePath) => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('flexjaransvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -28,8 +34,33 @@ describe('flexjaransvarlig Funksjon', () => {
 
     it('skal generere fil og hente data fra filen', () => {
         const data = genererUkeData('flexjar', dayjs(testDato))
-        lagFil('flexjar', data)
-        const flexjaransvarlig = hentFlexjaransvarlig()
-        expect(flexjaransvarlig.flexjar).toBeTruthy()
+        const tempFilePath = lagTempFil('flexjar', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.flexjar).toBeTruthy()
+    })
+
+    it('skal generere data med tilpasset startperson', () => {
+        const startPerson = flexjaransvarlige[2] // Velg tredje person i listen
+        const data = genererUkeData('flexjar', testDato, startPerson)
+
+        expect(data[0].ansvarlig).toEqual(startPerson)
+        expect(data[1].ansvarlig).toEqual(flexjaransvarlige[3]) // Ukentlig rotasjon
+        expect(data[2].ansvarlig).toEqual(flexjaransvarlige[4]) // Neste person etter 1 uke
+    })
+
+    it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
+        const startPerson = flexjaransvarlige[5] // Start med sjette person
+        const data = genererUkeData('flexjar', testDato, startPerson)
+
+        // Ukentlig rotasjon
+        expect(data[0].ansvarlig).toEqual(flexjaransvarlige[5])
+        expect(data[1].ansvarlig).toEqual(flexjaransvarlige[6])
+        expect(data[2].ansvarlig).toEqual(flexjaransvarlige[7])
+
+        // Wrapping til start av listen
+        const nestePerson = flexjaransvarlige[0] // Skal wrappe rundt
+        expect(data[3].ansvarlig).toEqual(nestePerson)
     })
 })

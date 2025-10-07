@@ -3,11 +3,11 @@ import weekOfYear from 'dayjs/plugin/weekOfYear'
 
 import { genererUkeData } from './common/genererUkeOversikt'
 import { lagFil } from './common/util/fil'
-import { retroansvarlige, Flexer } from './common/teammedlemmer'
+import { flexjaransvarlige, Flexer } from './common/teammedlemmer'
 
 dayjs.extend(weekOfYear)
 
-console.log('🚀 Starter generer-retro.ts')
+console.log('🚀 Starter generer-flexjar.ts')
 console.log(`📅 Dagens dato: ${dayjs().format('YYYY-MM-DD')} (uke ${dayjs().week()})`)
 
 // Hent argumenter fra environment variabler eller kommandolinje
@@ -35,7 +35,7 @@ if (ukeInput) {
         // Finn mandag i den spesifiserte uken
         const gjeldende = dayjs().week(startUke).startOf('week')
         startDato = gjeldende
-        console.log(`✅  Genererer retro-ansvar fra uke ${startUke} (${gjeldende.format('YYYY-MM-DD')})`)
+        console.log(`✅  Genererer flexjar-ansvar fra uke ${startUke} (${gjeldende.format('YYYY-MM-DD')})`)
     } else {
         console.log('❌ Ugyldig ukenummer. Bruker dagens uke som standard.')
         startUke = dayjs().week()
@@ -49,14 +49,14 @@ if (ukeInput) {
 if (personInput) {
     const personInitialer = personInput.toUpperCase()
     console.log(`🔍 Søker etter person med initialer: ${personInitialer}`)
-    startPerson = retroansvarlige.find((p) => p.initialer === personInitialer)
+    startPerson = flexjaransvarlige.find((p) => p.initialer === personInitialer)
 
     if (startPerson) {
-        console.log(`✅  ${startPerson.initialer} starter som retro-ansvarlig fra uke ${startUke}`)
+        console.log(`✅  ${startPerson.initialer} starter som flexjar-ansvarlig fra uke ${startUke}`)
     } else {
         console.log(`❌ Ukjente initialer: ${personInitialer}`)
-        console.log('📋 Tilgjengelige retro-ansvarlige:')
-        retroansvarlige.forEach((p) => console.log(`  - ${p.initialer}`))
+        console.log('📋 Tilgjengelige flexjar-ansvarlige:')
+        flexjaransvarlige.forEach((p) => console.log(`  - ${p.initialer}`))
         process.exit(1)
     }
 } else {
@@ -64,11 +64,11 @@ if (personInput) {
 }
 
 console.log(`\n🔧 Kaller genererUkeData med:`)
-console.log(`   - Ansvar: 'retro'`)
+console.log(`   - Ansvar: 'flexjar'`)
 console.log(`   - StartDato: ${startDato.format('YYYY-MM-DD')}`)
 console.log(`   - StartPerson: ${startPerson ? startPerson.initialer : 'ingen'}`)
 
-const data = genererUkeData('retro', startDato, startPerson)
+const data = genererUkeData('flexjar', startDato, startPerson)
 
 console.log(`\n📊 Genererte data:`)
 console.log(`   - Antall uker: ${data.length}`)
@@ -77,5 +77,5 @@ console.log(`   - Andre uke: ${data[1]?.ukenummer} (${data[1]?.datoFra}) - ${dat
 console.log(`   - Tredje uke: ${data[2]?.ukenummer} (${data[2]?.datoFra}) - ${data[2]?.ansvarlig.initialer}`)
 
 console.log(`\n💾 Lagrer fil...`)
-lagFil('retro', data)
+lagFil('flexjar', data)
 console.log(`✅  Ferdig!`)

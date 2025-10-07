@@ -1,12 +1,18 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
-import { hentProdansvarlig, prodansvarlig } from './prodansvarlig'
+import { prodansvarlig } from './prodansvarlig'
 import { prodansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const startDato = dayjs('2025-04-21')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach((filePath) => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('prodansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -51,7 +57,36 @@ describe('prodansvarlig Funksjon', () => {
 
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('prod', startDato)
-        lagFil('prod', data)
-        expect(hentProdansvarlig().prodansvar).toBeTruthy()
+        const tempFilePath = lagTempFil('prod', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.prodansvar).toBeTruthy()
+    })
+
+    it('skal generere data med tilpasset startperson', () => {
+        const startPerson = prodansvarlige[1] // Velg andre person i listen
+        const data = genererUkeData('prod', startDato, startPerson)
+
+        expect(data[0].ansvarlig).toEqual(startPerson)
+        expect(data[1].ansvarlig).toEqual(startPerson) // Bi-ukentlig rotasjon
+        expect(data[2].ansvarlig).toEqual(prodansvarlige[2]) // Neste person etter 2 uker
+    })
+
+    it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
+        const startPerson = prodansvarlige[2] // Start med tredje person
+        const data = genererUkeData('prod', startDato, startPerson)
+
+        // Første bi-uke
+        expect(data[0].ansvarlig).toEqual(prodansvarlige[2])
+        expect(data[1].ansvarlig).toEqual(prodansvarlige[2])
+
+        // Andre bi-uke
+        expect(data[2].ansvarlig).toEqual(prodansvarlige[3])
+        expect(data[3].ansvarlig).toEqual(prodansvarlige[3])
+
+        // Tredje bi-uke (skal wrappe rundt til start av listen)
+        const nestePerson = prodansvarlige[0] // Wrapping til start
+        expect(data[4].ansvarlig).toEqual(nestePerson)
     })
 })

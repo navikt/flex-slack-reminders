@@ -1,12 +1,18 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, afterEach } from 'vitest'
 import dayjs from 'dayjs'
 
-import { hentRetroAnsvarlig, retroansvarlig } from './retroansvarlig'
+import { retroansvarlig } from './retroansvarlig'
 import { retroansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
-import { lagFil } from './util/fil'
+import { lagTempFil, slettTempFil } from './util/fil'
 
 const startDato = dayjs('2024-09-15')
+let tempFilePaths: string[] = []
+
+afterEach(() => {
+    tempFilePaths.forEach((filePath) => slettTempFil(filePath))
+    tempFilePaths = []
+})
 
 describe('retroansvarlig Funksjon', () => {
     it('skal returnere det første medlemmet på startdatoen', () => {
@@ -51,8 +57,36 @@ describe('retroansvarlig Funksjon', () => {
 
     it('skal generere fil og hente inn data fra filen', () => {
         const data = genererUkeData('retro')
-        lagFil('retro', data)
-        const retroAnsvarlig = hentRetroAnsvarlig(47)
-        expect(retroAnsvarlig.retro).toBeTruthy()
+        const tempFilePath = lagTempFil('retro', data)
+        tempFilePaths.push(tempFilePath)
+
+        expect(data.length).toBe(52)
+        expect(data[0].ansvarlig.retro).toBeTruthy()
+    })
+
+    it('skal generere data med tilpasset startperson', () => {
+        const startPerson = retroansvarlige[1] // Velg andre person i listen
+        const data = genererUkeData('retro', startDato, startPerson)
+
+        expect(data[0].ansvarlig).toEqual(startPerson)
+        expect(data[1].ansvarlig).toEqual(startPerson) // Bi-ukentlig rotasjon
+        expect(data[2].ansvarlig).toEqual(retroansvarlige[2]) // Neste person etter 2 uker
+    })
+
+    it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
+        const startPerson = retroansvarlige[3] // Start med fjerde person
+        const data = genererUkeData('retro', startDato, startPerson)
+
+        // Første bi-uke
+        expect(data[0].ansvarlig).toEqual(retroansvarlige[3])
+        expect(data[1].ansvarlig).toEqual(retroansvarlige[3])
+
+        // Andre bi-uke
+        expect(data[2].ansvarlig).toEqual(retroansvarlige[4])
+        expect(data[3].ansvarlig).toEqual(retroansvarlige[4])
+
+        // Tredje bi-uke
+        expect(data[4].ansvarlig).toEqual(retroansvarlige[5])
+        expect(data[5].ansvarlig).toEqual(retroansvarlige[5])
     })
 })
