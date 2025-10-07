@@ -19,6 +19,7 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run prettier:check
       - run: npm run lint
+      - run: npm test -- --run
       - run: npm run build-stale-pull-request
       - run: npm run build-dependabot-alerts
       - run: npm run build-gamle-trello-kort
