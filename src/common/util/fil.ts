@@ -10,29 +10,50 @@ import { Flexer } from '../teammedlemmer'
 
 const outputDir = path.join(process.cwd(), 'ukeoversikt')
 
-export function lagFil(ansvar: AnsvarType, data: UkeData[]): void {
-    console.log(`📁 lagFil kalt med ansvar: '${ansvar}', data lengde: ${data.length}`)
+function lagJsonData(data: UkeData[]): string {
+    return JSON.stringify(data, null, 2)
+}
 
-    // Sjekk om 'ukeoversikt' mappen eksisterer, og opprett den hvis ikke
-    if (!existsSync(outputDir)) {
-        mkdirSync(outputDir, { recursive: true })
-        console.log(`📂 Opprettet mappen: ${outputDir}`)
-    } else {
-        console.log(`📂 Mappen eksisterer allerede: ${outputDir}`)
+function skrivDataTilFil(filbane: string, jsonData: string): void {
+    const mappe = path.dirname(filbane)
+
+    if (!existsSync(mappe)) {
+        mkdirSync(mappe, { recursive: true })
+        console.log(`📂 Opprettet mappen: ${mappe}`)
     }
 
-    // Konverter til JSON
-    const jsonData = JSON.stringify(data, null, 2)
-    console.log(`📄 JSON data generert, størrelse: ${jsonData.length} tegn`)
+    writeFileSync(filbane, jsonData)
+    console.log(`✅ ${filbane} har blitt generert.`)
+}
 
-    // Bygg den fullstendige filstien
-    const outputFilePath = path.join(outputDir, `${ansvar}-ansvarlig.json`)
-    console.log(`💾 Skriver til fil: ${outputFilePath}`)
+function skrivAnsvarDataTilFil(ansvar: AnsvarType, data: UkeData[], filbane: string): void {
+    const jsonData = lagJsonData(data)
+    skrivDataTilFil(filbane, jsonData)
+}
 
-    // Skriv til fil
-    writeFileSync(outputFilePath, jsonData)
+export function lagFil(ansvar: AnsvarType, data: UkeData[]): void {
+    console.log(`📁 lagFil kalt med ansvar: '${ansvar}', data lengde: ${data.length}`)
+    console.log(`📄 JSON data genereres...`)
 
-    console.log(`✅  ${outputFilePath} har blitt generert.`)
+    const filbane = path.join(outputDir, `${ansvar}-ansvarlig.json`)
+    console.log(`💾 Skriver til fil: ${filbane}`)
+
+    skrivAnsvarDataTilFil(ansvar, data, filbane)
+}
+
+export function lagTempFil(ansvar: AnsvarType, data: UkeData[]): string {
+    const tempDir = tmpdir()
+    const tempFilePath = path.join(tempDir, `test-${ansvar}-ansvarlig-${Date.now()}.json`)
+
+    skrivAnsvarDataTilFil(ansvar, data, tempFilePath)
+
+    return tempFilePath
+}
+
+export function slettTempFil(filbane: string): void {
+    if (existsSync(filbane)) {
+        unlinkSync(filbane)
+    }
 }
 
 function hentDataForUkenummer(filbane: string, ukenummer: number): UkeData {
@@ -51,20 +72,4 @@ export function hentAnsvarligFraFil(ansvar: AnsvarType, uke?: number): Flexer {
     const filbane = `ukeoversikt/${ansvar}-ansvarlig.json`
     const ukenummer = uke || dayjs().week()
     return hentDataForUkenummer(filbane, ukenummer).ansvarlig
-}
-
-export function lagTempFil(ansvar: AnsvarType, data: UkeData[]): string {
-    const tempDir = tmpdir()
-    const tempFilePath = path.join(tempDir, `test-${ansvar}-ansvarlig-${Date.now()}.json`)
-
-    const jsonData = JSON.stringify(data, null, 2)
-    writeFileSync(tempFilePath, jsonData)
-
-    return tempFilePath
-}
-
-export function slettTempFil(filePath: string): void {
-    if (existsSync(filePath)) {
-        unlinkSync(filePath)
-    }
 }
