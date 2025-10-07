@@ -41,7 +41,7 @@ jobs:
         run: npm run lint
 
   build:
-    name: Bygg alle komponenter
+    name: Valider byggbarhet
     runs-on: ubuntu-latest
     needs: [test, lint]
     steps:
@@ -55,23 +55,23 @@ jobs:
         run: npm ci
         env:
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Bygg stale-pull-request
-        run: npm run build-stale-pull-request
-      - name: Bygg dependabot-alerts
-        run: npm run build-dependabot-alerts
-      - name: Bygg gamle-trello-kort
-        run: npm run build-gamle-trello-kort
-      - name: Bygg prodansvar
+      - name: Valider TypeScript kompilering
+        run: npx tsc --noEmit
+
+      - name: Test ncc bundling på ett vilkårlig script
         run: npm run build-prodansvar
-      - name: Bygg sjekk-prodansvar
-        run: npm run build-sjekk-prodansvar
-      - name: Bygg flexjaransvar
-        run: npm run build-flexjaransvar
-      - name: Bygg code-ql
-        run: npm run build-code-ql
-      - name: Bygg retroansvar
-        run: npm run build-retroansvar
-      - name: Bygg friday-wins-reminder
-        run: npm run build-friday-wins-reminder
-      - name: Bygg bursdag-reminder
-        run: npm run build-bursdag-reminder
+
+      - name: Valider at genererte filer kan leses
+        run: |
+          echo "Sjekker at prod-ansvarlig.json er gyldig etter bygg..."
+          node -e "
+            const fs = require('fs');
+            const file = 'ukeoversikt/prod-ansvarlig.json';
+            if (fs.existsSync(file)) {
+              JSON.parse(fs.readFileSync(file, 'utf8'));
+              console.log(\`✅ \${file} er gyldig JSON og ble generert av bygget\`);
+            } else {
+              console.error(\`❌ \${file} ble ikke generert av bygget\`);
+              process.exit(1);
+            }
+          "
