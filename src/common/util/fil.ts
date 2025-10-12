@@ -3,10 +3,10 @@ import { existsSync, mkdirSync, writeFileSync, unlinkSync } from 'node:fs'
 import { readFileSync } from 'fs'
 import { tmpdir } from 'node:os'
 
-import dayjs from 'dayjs'
-
 import { AnsvarType, UkeData } from '../genererUkeOversikt'
 import { Flexer } from '../teammedlemmer'
+
+import dayjs from './dayjs-config'
 
 const outputDir = path.join(process.cwd(), 'ukeoversikt')
 

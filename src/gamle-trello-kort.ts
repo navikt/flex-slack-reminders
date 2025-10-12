@@ -1,6 +1,5 @@
 import './common/configInit'
-import * as dayjs from 'dayjs'
-
+import dayjs from './common/util/dayjs-config'
 import { numberToSlackEmoji } from './common/numberToEmoji'
 import { hentTrellokort } from './common/trelloApi'
 import { slackWebClient } from './common/slackClient'

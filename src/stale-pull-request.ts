@@ -1,7 +1,7 @@
 import './common/configInit'
-import * as dayjs from 'dayjs'
 import { Block, KnownBlock } from '@slack/types'
 
+import dayjs from './common/util/dayjs-config'
 import { octokit } from './octokit'
 import { hentRepoer } from './common/hentRepoer'
 import { numberToSlackEmoji } from './common/numberToEmoji'

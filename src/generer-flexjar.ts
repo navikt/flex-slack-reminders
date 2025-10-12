@@ -1,11 +1,7 @@
-import dayjs from 'dayjs'
-import weekOfYear from 'dayjs/plugin/weekOfYear'
-
+import dayjs from './common/util/dayjs-config'
 import { genererUkeData } from './common/genererUkeOversikt'
 import { lagFil } from './common/util/fil'
 import { flexjaransvarlige, Flexer } from './common/teammedlemmer'
-
-dayjs.extend(weekOfYear)
 
 console.log('🚀 Starter generer-flexjar.ts')
 console.log(`📅 Dagens dato: ${dayjs().format('YYYY-MM-DD')} (uke ${dayjs().week()})`)

@@ -1,6 +1,6 @@
-import { describe, expect, it, afterEach } from 'vitest'
-import dayjs from 'dayjs'
+import { describe, it, expect, afterEach } from 'vitest'
 
+import dayjs from './util/dayjs-config'
 import { flexjaransvarlig } from './flexjaransvarlig'
 import { flexjaransvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'
