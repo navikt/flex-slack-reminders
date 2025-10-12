@@ -1,5 +1,4 @@
-import dayjs from 'dayjs'
-
+import dayjs from './common/util/dayjs-config'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 import { bursdagsbarna } from './common/teammedlemmer'

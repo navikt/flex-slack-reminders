@@ -1,12 +1,8 @@
-import dayjs, { Dayjs } from 'dayjs'
-import weekOfYear from 'dayjs/plugin/weekOfYear'
-
+import dayjs, { Dayjs } from './util/dayjs-config'
 import { retroansvarlig } from './retroansvarlig'
 import { flexjaransvarlig } from './flexjaransvarlig'
 import { prodansvarlig } from './prodansvarlig'
 import { Flexer, flexjaransvarlige, prodansvarlige, retroansvarlige } from './teammedlemmer'
-
-dayjs.extend(weekOfYear)
 
 export interface UkeData {
     ukenummer: number

@@ -1,14 +1,10 @@
 import './common/configInit'
-import dayjs from 'dayjs'
-import weekOfYear from 'dayjs/plugin/weekOfYear'
-
+import dayjs from './common/util/dayjs-config'
 import { hentProdansvarlig } from './common/prodansvarlig'
 import { hentFlexjaransvarlig } from './common/flexjaransvarlig'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
 import { hentRetroAnsvarlig } from './common/retroansvarlig'
-
-dayjs.extend(weekOfYear)
 
 dayjs('2018-06-27').week() // 26
 

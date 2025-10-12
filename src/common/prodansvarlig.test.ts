@@ -1,6 +1,6 @@
 import { describe, it, expect, afterEach } from 'vitest'
-import dayjs from 'dayjs'
 
+import dayjs from './util/dayjs-config'
 import { prodansvarlig } from './prodansvarlig'
 import { prodansvarlige } from './teammedlemmer'
 import { genererUkeData } from './genererUkeOversikt'

@@ -1,11 +1,7 @@
-import dayjs from 'dayjs'
-import weekOfYear from 'dayjs/plugin/weekOfYear'
+import dayjs from './common/util/dayjs-config'
 import './common/configInit'
-
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
-
-dayjs.extend(weekOfYear)
 
 if (dayjs().week() % 2 !== 0) {
     await slackWebClient.chat.postMessage({

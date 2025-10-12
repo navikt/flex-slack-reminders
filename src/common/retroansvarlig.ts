@@ -1,6 +1,4 @@
-import dayjs from 'dayjs'
-import { Dayjs } from 'dayjs'
-
+import dayjs, { Dayjs } from './util/dayjs-config'
 import { Flexer, retroansvarlige } from './teammedlemmer'
 import { hentAnsvarligFraFil } from './util/fil'
 
