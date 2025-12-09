@@ -30,7 +30,8 @@ Ny uke, nye muligheter – og i dag er du prod-ansvarlig! 🚀
 Dagens oppgaver er som følger:
 1. *Loggsjekk*: Ta en titt på loggene fra de siste 24 timene 🔍. Se etter feil, advarsler eller noe som ser litt mystisk ut 🧐.
 2. *FlexyMcMetrics*: Ta en kikk på de funksjonelle metrikkene for hele siste uke i kanalen #flexinternal
-4. *Sjekk Pods*: Kontroller pods i prod og dev for eventuelle som henger eller feiler 💻.
+3. *Sjekk Pods*: Kontroller pods i prod og dev for eventuelle som henger eller feiler 💻.
+4. *Sjekk såbarheter*: Gå gjennom eventuelle nye sårbarheter i NAIS/Salsa/Dependabot for alle appene våre. CVSS over 9 må håndteres innen neste arbeidsdag :nais-spin:
 
 Når du har sjekket alt, reager med ✅ her eller skriv en liten oppdatering på hvordan det står til. Vi heier på deg! 💪
 
@@ -47,6 +48,7 @@ Her er hva du må gjøre i dag:
 1. *Loggsjekk*: Gå gjennom loggene fra de siste 24 timene 🔍. Pass på at ingen feil har sneket seg inn! 🧐
 2. *Flex Kafka Lag Dashboard*: Sjekk Kafka-lagget for Flex og sørg for at det ikke er forsinkelser i dataflyten :kafka-logo-white:
 3. *Sjekk kanalen #spøkelser*: Gå gjennom kanalen #spøkelser i Slack for SODA-feilmeldinger 👻. Følg instruksjonene i dokumentet.
+4. *Sjekk såbarheter*: Gå gjennom eventuelle nye sårbarheter i NAIS/Salsa/Dependabot for alle appene våre. CVSS over 9 må håndteres innen neste arbeidsdag :nais-spin:
 
 Når du er ferdig, gi oss et tegn med ✅ her, eller del en kort statusoppdatering. Du gjør en viktig jobb! 🙌
 
@@ -61,8 +63,8 @@ Halvveis gjennom uken, men vi har fortsatt litt igjen å sjekke! 🚀
 
 Dagens oppgaver:
 1. *Loggsjekk*: Fortsett den gode innsatsen med å sjekke loggene fra de siste 24 timene 🔍.
-2. *Github Sårbarheter*: Sjekk for eventuelle sårbarheter i GitHub-repositoryene våre :github: Er det noe som må følges opp?
-3. *CloudSQL - GCP*: Sjekk at alt ser bra ut med databasen :database: Hold et øye med ytelse, lagring og andre viktige målinger.
+2. *CloudSQL - GCP*: Sjekk at alt ser bra ut med databasen :database: Hold et øye med ytelse, lagring og andre viktige målinger.
+3. *Sjekk såbarheter*: Gå gjennom eventuelle nye sårbarheter i NAIS/Salsa/Dependabot for alle appene våre. CVSS over 9 må håndteres innen neste arbeidsdag :nais-spin:
 
 Reager med ✅ her når du er ferdig, eller del en rask oppdatering. Takk for innsatsen! 🙌
 
@@ -79,6 +81,7 @@ Dagens oppgaver:
 1. *Loggsjekk*: Sjekk loggene fra de siste 24 timene som vanlig 🔍.
 2. *CodeQL Funn*: Gå gjennom eventuelle funn i CodeQL og se om det er noe som krever oppmerksomhet :codeql:
 3. *Sjekk liste over gamle PRs*: Ta en titt på kanalen #flex-dev og sjekk om det er gamle PRs som fortsatt må følges opp 📋.
+4. *Sjekk såbarheter*: Gå gjennom eventuelle nye sårbarheter i NAIS/Salsa/Dependabot for alle appene våre. CVSS over 9 må håndteres innen neste arbeidsdag :nais-spin:
 
 Når du har gjennomført dagens sjekk, kan du reagere med ✅ eller gi en rask oppdatering. Fortsett med det gode arbeidet! 💪
 
@@ -93,9 +96,9 @@ Siste innspurt før helgen! 🚀
 
 Dagens sjekkliste:
 1. *Loggsjekk*: En siste gjennomgang av loggene før helgen 🔍. Sørg for at alt ser bra ut!
-2. *NAIS/Salsa Sårbarheter*: Sjekk for sårbarheter på NAIS/Salsa for alle appene våre :nais-spin:
-3. *Flex Apper Oversikt*: Gå gjennom statusen på Flex-appene og sørg for at alle tjenester kjører som de skal. Hvis noe ser unormalt ut, gi det ekstra oppmerksomhet! 🔍🚦
-4. *Sjekk Pods*: Kontroller pods i både prod og dev-miljøene for å sikre at ingen pods henger eller feiler. Rask oppfølging kan forhindre større problemer! 🚀🛠️
+2. *Flex Apper Oversikt*: Gå gjennom statusen på Flex-appene og sørg for at alle tjenester kjører som de skal. Hvis noe ser unormalt ut, gi det ekstra oppmerksomhet! 🔍🚦
+3. *Sjekk Pods*: Kontroller pods i både prod og dev-miljøene for å sikre at ingen pods henger eller feiler. Rask oppfølging kan forhindre større problemer! 🚀🛠️
+4. *Sjekk såbarheter*: Gå gjennom eventuelle nye sårbarheter i NAIS/Salsa/Dependabot for alle appene våre. CVSS over 9 må håndteres innen neste arbeidsdag :nais-spin:
 
 Når alt er sjekket, reager med ✅ eller gi en kort oppdatering. Helgen er rett rundt hjørnet! 🎉
 
