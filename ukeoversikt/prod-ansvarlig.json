@@ -286,32 +286,6 @@
         }
     },
     {
-        "ukenummer": 10,
-        "datoFra": "2026-03-01",
-        "datoTil": "2026-03-07",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
-        "ukenummer": 11,
-        "datoFra": "2026-03-08",
-        "datoTil": "2026-03-14",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
         "ukenummer": 12,
         "datoFra": "2026-03-15",
         "datoTil": "2026-03-21",
@@ -387,32 +361,6 @@
             "flexjar": true,
             "retro": true,
             "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 18,
-        "datoFra": "2026-04-26",
-        "datoTil": "2026-05-02",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
-        "ukenummer": 19,
-        "datoFra": "2026-05-03",
-        "datoTil": "2026-05-09",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
         }
     },
     {
@@ -494,32 +442,6 @@
         }
     },
     {
-        "ukenummer": 26,
-        "datoFra": "2026-06-21",
-        "datoTil": "2026-06-27",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
-        "ukenummer": 27,
-        "datoFra": "2026-06-28",
-        "datoTil": "2026-07-04",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
         "ukenummer": 28,
         "datoFra": "2026-07-05",
         "datoTil": "2026-07-11",
@@ -595,32 +517,6 @@
             "flexjar": true,
             "retro": true,
             "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 34,
-        "datoFra": "2026-08-16",
-        "datoTil": "2026-08-22",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
-        }
-    },
-    {
-        "ukenummer": 35,
-        "datoFra": "2026-08-23",
-        "datoTil": "2026-08-29",
-        "ansvarlig": {
-            "initialer": "EHS",
-            "memberId": "U07TAUJLXCM",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-15"
         }
     },
     {
