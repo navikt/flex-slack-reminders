@@ -74,18 +74,15 @@ describe('retroansvarlig Funksjon', () => {
     })
 
     it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
-        const startPerson = retroansvarlige[3] // Start med fjerde person
+        const startPerson = retroansvarlige[3]
         const data = genererUkeData('retro', startDato, startPerson)
 
-        // Første bi-uke
         expect(data[0].ansvarlig).toEqual(retroansvarlige[3])
         expect(data[1].ansvarlig).toEqual(retroansvarlige[3])
 
-        // Andre bi-uke
         expect(data[2].ansvarlig).toEqual(retroansvarlige[4])
         expect(data[3].ansvarlig).toEqual(retroansvarlige[4])
 
-        // Tredje bi-uke
         expect(data[4].ansvarlig).toEqual(retroansvarlige[5])
         expect(data[5].ansvarlig).toEqual(retroansvarlige[5])
     })
