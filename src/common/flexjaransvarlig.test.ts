@@ -51,16 +51,14 @@ describe('flexjaransvarlig Funksjon', () => {
     })
 
     it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
-        const startPerson = flexjaransvarlige[5] // Start med sjette person
+        const startPerson = flexjaransvarlige[3]
         const data = genererUkeData('flexjar', testDato, startPerson)
 
-        // Ukentlig rotasjon
-        expect(data[0].ansvarlig).toEqual(flexjaransvarlige[5])
-        expect(data[1].ansvarlig).toEqual(flexjaransvarlige[6])
-        expect(data[2].ansvarlig).toEqual(flexjaransvarlige[7])
+        expect(data[0].ansvarlig).toEqual(flexjaransvarlige[3])
+        expect(data[1].ansvarlig).toEqual(flexjaransvarlige[4])
+        expect(data[2].ansvarlig).toEqual(flexjaransvarlige[5])
 
-        // Wrapping til start av listen
-        const nestePerson = flexjaransvarlige[0] // Skal wrappe rundt
+        const nestePerson = flexjaransvarlige[0]
         expect(data[3].ansvarlig).toEqual(nestePerson)
     })
 })

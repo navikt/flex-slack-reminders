@@ -74,19 +74,16 @@ describe('prodansvarlig Funksjon', () => {
     })
 
     it('skal håndtere rotasjon med tilpasset startperson korrekt', () => {
-        const startPerson = prodansvarlige[2] // Start med tredje person
+        const startPerson = prodansvarlige[1]
         const data = genererUkeData('prod', startDato, startPerson)
 
-        // Første bi-uke
-        expect(data[0].ansvarlig).toEqual(prodansvarlige[2])
-        expect(data[1].ansvarlig).toEqual(prodansvarlige[2])
+        expect(data[0].ansvarlig).toEqual(prodansvarlige[1])
+        expect(data[1].ansvarlig).toEqual(prodansvarlige[1])
 
-        // Andre bi-uke
-        expect(data[2].ansvarlig).toEqual(prodansvarlige[3])
-        expect(data[3].ansvarlig).toEqual(prodansvarlige[3])
+        expect(data[2].ansvarlig).toEqual(prodansvarlige[2])
+        expect(data[3].ansvarlig).toEqual(prodansvarlige[2])
 
-        // Tredje bi-uke (skal wrappe rundt til start av listen)
-        const nestePerson = prodansvarlige[0] // Wrapping til start
+        const nestePerson = prodansvarlige[0]
         expect(data[4].ansvarlig).toEqual(nestePerson)
     })
 })
