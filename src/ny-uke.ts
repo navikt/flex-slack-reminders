@@ -4,7 +4,6 @@ import { hentProdansvarlig } from './common/prodansvarlig'
 import { hentFlexjaransvarlig } from './common/flexjaransvarlig'
 import { slackWebClient } from './common/slackClient'
 import { flexInternal } from './common/slackChannels'
-import { hentRetroAnsvarlig } from './common/retroansvarlig'
 
 dayjs('2018-06-27').week() // 26
 
@@ -30,13 +29,6 @@ await slackWebClient.chat.postMessage({
             text: {
                 type: 'mrkdwn',
                 text: `På fredag har <@${hentFlexjaransvarlig().memberId}> flexjaransvar.`,
-            },
-        },
-        {
-            type: 'section',
-            text: {
-                type: 'mrkdwn',
-                text: `Neste retro skal fasiliteres av <@${hentRetroAnsvarlig().memberId}>.`,
             },
         },
     ],
