@@ -36,7 +36,7 @@
         "@octokit/rest": "^22.0.1",
         "@slack/types": "^2.21.1",
         "@slack/web-api": "^7.16.0",
-        "dayjs": "^1.11.20",
+        "dayjs": "^1.11.21",
         "dotenv": "^16.5.0"
     },
     "devDependencies": {
