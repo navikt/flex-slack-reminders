@@ -1,279 +1,5 @@
 [
     {
-        "ukenummer": 10,
-        "datoFra": "2026-03-01",
-        "datoTil": "2026-03-07",
-        "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-27"
-        }
-    },
-    {
-        "ukenummer": 11,
-        "datoFra": "2026-03-08",
-        "datoTil": "2026-03-14",
-        "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-27"
-        }
-    },
-    {
-        "ukenummer": 12,
-        "datoFra": "2026-03-15",
-        "datoTil": "2026-03-21",
-        "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 13,
-        "datoFra": "2026-03-22",
-        "datoTil": "2026-03-28",
-        "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 14,
-        "datoFra": "2026-03-29",
-        "datoTil": "2026-04-04",
-        "ansvarlig": {
-            "initialer": "ATS",
-            "memberId": "U04HMSMPTKK",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "12-06"
-        }
-    },
-    {
-        "ukenummer": 15,
-        "datoFra": "2026-04-05",
-        "datoTil": "2026-04-11",
-        "ansvarlig": {
-            "initialer": "ATS",
-            "memberId": "U04HMSMPTKK",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "12-06"
-        }
-    },
-    {
-        "ukenummer": 16,
-        "datoFra": "2026-04-12",
-        "datoTil": "2026-04-18",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 17,
-        "datoFra": "2026-04-19",
-        "datoTil": "2026-04-25",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 18,
-        "datoFra": "2026-04-26",
-        "datoTil": "2026-05-02",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
-        "ukenummer": 19,
-        "datoFra": "2026-05-03",
-        "datoTil": "2026-05-09",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
-        "ukenummer": 20,
-        "datoFra": "2026-05-10",
-        "datoTil": "2026-05-16",
-        "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "01-05"
-        }
-    },
-    {
-        "ukenummer": 21,
-        "datoFra": "2026-05-17",
-        "datoTil": "2026-05-23",
-        "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "01-05"
-        }
-    },
-    {
-        "ukenummer": 22,
-        "datoFra": "2026-05-24",
-        "datoTil": "2026-05-30",
-        "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-27"
-        }
-    },
-    {
-        "ukenummer": 23,
-        "datoFra": "2026-05-31",
-        "datoTil": "2026-06-06",
-        "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-27"
-        }
-    },
-    {
-        "ukenummer": 24,
-        "datoFra": "2026-06-07",
-        "datoTil": "2026-06-13",
-        "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 25,
-        "datoFra": "2026-06-14",
-        "datoTil": "2026-06-20",
-        "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "11-23"
-        }
-    },
-    {
-        "ukenummer": 26,
-        "datoFra": "2026-06-21",
-        "datoTil": "2026-06-27",
-        "ansvarlig": {
-            "initialer": "ATS",
-            "memberId": "U04HMSMPTKK",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "12-06"
-        }
-    },
-    {
-        "ukenummer": 27,
-        "datoFra": "2026-06-28",
-        "datoTil": "2026-07-04",
-        "ansvarlig": {
-            "initialer": "ATS",
-            "memberId": "U04HMSMPTKK",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "12-06"
-        }
-    },
-    {
-        "ukenummer": 28,
-        "datoFra": "2026-07-05",
-        "datoTil": "2026-07-11",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 29,
-        "datoFra": "2026-07-12",
-        "datoTil": "2026-07-18",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 30,
-        "datoFra": "2026-07-19",
-        "datoTil": "2026-07-25",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
-        "ukenummer": 31,
-        "datoFra": "2026-07-26",
-        "datoTil": "2026-08-01",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
         "ukenummer": 32,
         "datoFra": "2026-08-02",
         "datoTil": "2026-08-08",
@@ -380,11 +106,11 @@
         "datoFra": "2026-09-27",
         "datoTil": "2026-10-03",
         "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
             "flexjar": true,
             "retro": true,
-            "bursdag": "09-19"
+            "bursdag": "03-16"
         }
     },
     {
@@ -392,11 +118,11 @@
         "datoFra": "2026-10-04",
         "datoTil": "2026-10-10",
         "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
             "flexjar": true,
             "retro": true,
-            "bursdag": "09-19"
+            "bursdag": "03-16"
         }
     },
     {
@@ -404,11 +130,12 @@
         "datoFra": "2026-10-11",
         "datoTil": "2026-10-17",
         "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "03-16"
+            "bursdag": "01-05"
         }
     },
     {
@@ -416,11 +143,12 @@
         "datoFra": "2026-10-18",
         "datoTil": "2026-10-24",
         "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "03-16"
+            "bursdag": "01-05"
         }
     },
     {
@@ -428,12 +156,12 @@
         "datoFra": "2026-10-25",
         "datoTil": "2026-10-31",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "01-05"
+            "bursdag": "02-27"
         }
     },
     {
@@ -441,12 +169,12 @@
         "datoFra": "2026-11-01",
         "datoTil": "2026-11-07",
         "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
             "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "01-05"
+            "bursdag": "02-27"
         }
     },
     {
@@ -454,12 +182,12 @@
         "datoFra": "2026-11-08",
         "datoTil": "2026-11-14",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "02-27"
+            "bursdag": "11-23"
         }
     },
     {
@@ -467,12 +195,12 @@
         "datoFra": "2026-11-15",
         "datoTil": "2026-11-21",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
             "prodansvar": true,
             "flexjar": true,
             "retro": true,
-            "bursdag": "02-27"
+            "bursdag": "11-23"
         }
     },
     {
@@ -480,12 +208,11 @@
         "datoFra": "2026-11-22",
         "datoTil": "2026-11-28",
         "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
             "flexjar": true,
             "retro": true,
-            "bursdag": "11-23"
+            "bursdag": "12-06"
         }
     },
     {
@@ -493,12 +220,11 @@
         "datoFra": "2026-11-29",
         "datoTil": "2026-12-05",
         "ansvarlig": {
-            "initialer": "SSH",
-            "memberId": "US0A35WUR",
-            "prodansvar": true,
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
             "flexjar": true,
             "retro": true,
-            "bursdag": "11-23"
+            "bursdag": "12-06"
         }
     },
     {
@@ -506,11 +232,11 @@
         "datoFra": "2026-12-06",
         "datoTil": "2026-12-12",
         "ansvarlig": {
-            "initialer": "ATS",
-            "memberId": "U04HMSMPTKK",
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
             "flexjar": true,
             "retro": true,
-            "bursdag": "12-06"
+            "bursdag": "03-16"
         }
     },
     {
@@ -518,6 +244,96 @@
         "datoFra": "2026-12-13",
         "datoTil": "2026-12-19",
         "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 52,
+        "datoFra": "2026-12-20",
+        "datoTil": "2026-12-26",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 1,
+        "datoFra": "2026-12-27",
+        "datoTil": "2027-01-02",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 2,
+        "datoFra": "2027-01-03",
+        "datoTil": "2027-01-09",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 3,
+        "datoFra": "2027-01-10",
+        "datoTil": "2027-01-16",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 4,
+        "datoFra": "2027-01-17",
+        "datoTil": "2027-01-23",
+        "ansvarlig": {
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "11-23"
+        }
+    },
+    {
+        "ukenummer": 5,
+        "datoFra": "2027-01-24",
+        "datoTil": "2027-01-30",
+        "ansvarlig": {
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "11-23"
+        }
+    },
+    {
+        "ukenummer": 6,
+        "datoFra": "2027-01-31",
+        "datoTil": "2027-02-06",
+        "ansvarlig": {
             "initialer": "ATS",
             "memberId": "U04HMSMPTKK",
             "flexjar": true,
@@ -526,103 +342,15 @@
         }
     },
     {
-        "ukenummer": 52,
-        "datoFra": "2026-12-20",
-        "datoTil": "2026-12-26",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 1,
-        "datoFra": "2026-12-27",
-        "datoTil": "2027-01-02",
-        "ansvarlig": {
-            "initialer": "PB",
-            "memberId": "UE89E1WTY",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "09-19"
-        }
-    },
-    {
-        "ukenummer": 2,
-        "datoFra": "2027-01-03",
-        "datoTil": "2027-01-09",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
-        "ukenummer": 3,
-        "datoFra": "2027-01-10",
-        "datoTil": "2027-01-16",
-        "ansvarlig": {
-            "initialer": "TM",
-            "memberId": "U06QFQVELJF",
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "03-16"
-        }
-    },
-    {
-        "ukenummer": 4,
-        "datoFra": "2027-01-17",
-        "datoTil": "2027-01-23",
-        "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "01-05"
-        }
-    },
-    {
-        "ukenummer": 5,
-        "datoFra": "2027-01-24",
-        "datoTil": "2027-01-30",
-        "ansvarlig": {
-            "initialer": "NJM",
-            "memberId": "U02AM04QV96",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "01-05"
-        }
-    },
-    {
-        "ukenummer": 6,
-        "datoFra": "2027-01-31",
-        "datoTil": "2027-02-06",
-        "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
-            "flexjar": true,
-            "retro": true,
-            "bursdag": "02-27"
-        }
-    },
-    {
         "ukenummer": 7,
         "datoFra": "2027-02-07",
         "datoTil": "2027-02-13",
         "ansvarlig": {
-            "initialer": "OBL",
-            "memberId": "U06FTG7L532",
-            "prodansvar": true,
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
             "flexjar": true,
             "retro": true,
-            "bursdag": "02-27"
+            "bursdag": "12-06"
         }
     },
     {
@@ -630,6 +358,82 @@
         "datoFra": "2027-02-14",
         "datoTil": "2027-02-20",
         "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 9,
+        "datoFra": "2027-02-21",
+        "datoTil": "2027-02-27",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 10,
+        "datoFra": "2027-02-28",
+        "datoTil": "2027-03-06",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 11,
+        "datoFra": "2027-03-07",
+        "datoTil": "2027-03-13",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 12,
+        "datoFra": "2027-03-14",
+        "datoTil": "2027-03-20",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 13,
+        "datoFra": "2027-03-21",
+        "datoTil": "2027-03-27",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 14,
+        "datoFra": "2027-03-28",
+        "datoTil": "2027-04-03",
+        "ansvarlig": {
             "initialer": "SSH",
             "memberId": "US0A35WUR",
             "prodansvar": true,
@@ -639,9 +443,9 @@
         }
     },
     {
-        "ukenummer": 9,
-        "datoFra": "2027-02-21",
-        "datoTil": "2027-02-27",
+        "ukenummer": 15,
+        "datoFra": "2027-04-04",
+        "datoTil": "2027-04-10",
         "ansvarlig": {
             "initialer": "SSH",
             "memberId": "US0A35WUR",
@@ -649,6 +453,206 @@
             "flexjar": true,
             "retro": true,
             "bursdag": "11-23"
+        }
+    },
+    {
+        "ukenummer": 16,
+        "datoFra": "2027-04-11",
+        "datoTil": "2027-04-17",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "12-06"
+        }
+    },
+    {
+        "ukenummer": 17,
+        "datoFra": "2027-04-18",
+        "datoTil": "2027-04-24",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "12-06"
+        }
+    },
+    {
+        "ukenummer": 18,
+        "datoFra": "2027-04-25",
+        "datoTil": "2027-05-01",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 19,
+        "datoFra": "2027-05-02",
+        "datoTil": "2027-05-08",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 20,
+        "datoFra": "2027-05-09",
+        "datoTil": "2027-05-15",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 21,
+        "datoFra": "2027-05-16",
+        "datoTil": "2027-05-22",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 22,
+        "datoFra": "2027-05-23",
+        "datoTil": "2027-05-29",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 23,
+        "datoFra": "2027-05-30",
+        "datoTil": "2027-06-05",
+        "ansvarlig": {
+            "initialer": "OBL",
+            "memberId": "U06FTG7L532",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "02-27"
+        }
+    },
+    {
+        "ukenummer": 24,
+        "datoFra": "2027-06-06",
+        "datoTil": "2027-06-12",
+        "ansvarlig": {
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "11-23"
+        }
+    },
+    {
+        "ukenummer": 25,
+        "datoFra": "2027-06-13",
+        "datoTil": "2027-06-19",
+        "ansvarlig": {
+            "initialer": "SSH",
+            "memberId": "US0A35WUR",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "11-23"
+        }
+    },
+    {
+        "ukenummer": 26,
+        "datoFra": "2027-06-20",
+        "datoTil": "2027-06-26",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "12-06"
+        }
+    },
+    {
+        "ukenummer": 27,
+        "datoFra": "2027-06-27",
+        "datoTil": "2027-07-03",
+        "ansvarlig": {
+            "initialer": "ATS",
+            "memberId": "U04HMSMPTKK",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "12-06"
+        }
+    },
+    {
+        "ukenummer": 28,
+        "datoFra": "2027-07-04",
+        "datoTil": "2027-07-10",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 29,
+        "datoFra": "2027-07-11",
+        "datoTil": "2027-07-17",
+        "ansvarlig": {
+            "initialer": "TM",
+            "memberId": "U06QFQVELJF",
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "03-16"
+        }
+    },
+    {
+        "ukenummer": 30,
+        "datoFra": "2027-07-18",
+        "datoTil": "2027-07-24",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
+        }
+    },
+    {
+        "ukenummer": 31,
+        "datoFra": "2027-07-25",
+        "datoTil": "2027-07-31",
+        "ansvarlig": {
+            "initialer": "NJM",
+            "memberId": "U02AM04QV96",
+            "prodansvar": true,
+            "flexjar": true,
+            "retro": true,
+            "bursdag": "01-05"
         }
     }
 ]
