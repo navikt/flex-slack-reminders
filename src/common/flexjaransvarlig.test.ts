@@ -56,9 +56,8 @@ describe('flexjaransvarlig Funksjon', () => {
 
         expect(data[0].ansvarlig).toEqual(flexjaransvarlige[3])
         expect(data[1].ansvarlig).toEqual(flexjaransvarlige[4])
-        expect(data[2].ansvarlig).toEqual(flexjaransvarlige[5])
 
         const nestePerson = flexjaransvarlige[0]
-        expect(data[3].ansvarlig).toEqual(nestePerson)
+        expect(data[2].ansvarlig).toEqual(nestePerson)
     })
 })

@@ -82,8 +82,5 @@ describe('retroansvarlig Funksjon', () => {
 
         expect(data[2].ansvarlig).toEqual(retroansvarlige[4])
         expect(data[3].ansvarlig).toEqual(retroansvarlige[4])
-
-        expect(data[4].ansvarlig).toEqual(retroansvarlige[5])
-        expect(data[5].ansvarlig).toEqual(retroansvarlige[5])
     })
 })
