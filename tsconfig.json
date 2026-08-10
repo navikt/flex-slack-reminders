@@ -3,7 +3,7 @@
         "allowSyntheticDefaultImports": true,
         "rootDir": "./src",
         "module": "esnext",
-        "target": "es2017",
+        "target": "ES2022",
         "moduleResolution": "bundler",
         "allowJs": false,
         "forceConsistentCasingInFileNames": true,
