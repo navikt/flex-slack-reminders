@@ -24,8 +24,8 @@
         "prodansvar": "ncc run src/prodansvar.ts",
         "sjekk-prodansvar": "ncc run src/sjekk-prodansvar.ts",
         "retroansvar": "ncc run src/generer-retro.ts",
-        "lint": "eslint --ext=ts src",
-        "lint:fix": "eslint --ext=ts src --fix",
+        "lint": "eslint src",
+        "lint:fix": "eslint src --fix",
         "prettier:write": "prettier --write .",
         "prettier:check": "prettier --check .",
         "format": "npm run prettier:write && npm run lint:fix",
@@ -40,23 +40,16 @@
         "dotenv": "^17.4.2"
     },
     "devDependencies": {
-        "@navikt/eslint-config-teamsykmelding": "8.1.3",
+        "@navikt/tsm-prettier": "^2.0.1",
         "@types/node": "^24.13.2",
         "@vercel/ncc": "^0.44.1",
-        "eslint": "^8.57.1",
+        "eslint": "^9.39.5",
+        "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.6",
         "prettier": "^3.9.6",
         "typescript": "^6.0.3",
+        "typescript-eslint": "^8.65.0",
         "vitest": "^4.1.10"
     },
-    "eslintConfig": {
-        "extends": [
-            "@navikt/eslint-config-teamsykmelding"
-        ],
-        "rules": {
-            "react/jsx-curly-brace-presence": "off",
-            "no-console": "off"
-        }
-    },
-    "prettier": "@navikt/eslint-config-teamsykmelding/prettier"
+    "prettier": "@navikt/tsm-prettier"
 }
