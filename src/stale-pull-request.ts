@@ -10,7 +10,7 @@ import { flexDev } from './common/slackChannels'
 
 const repoer = hentRepoer()
 const antallDager = 7
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 const alleBlocks = [] as (KnownBlock | Block)[][]
 let antallGamle = 0
 
