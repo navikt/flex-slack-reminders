@@ -57,15 +57,20 @@ export function slettTempFil(filbane: string): void {
 }
 
 function hentDataForUkenummer(filbane: string, ukenummer: number): UkeData {
+    let data: UkeData[]
     try {
         const jsonData = readFileSync(filbane, 'utf-8')
-        const data = JSON.parse(jsonData)
-        const resultat = data.find((uke: UkeData) => uke.ukenummer === ukenummer)
-        return resultat ? resultat : `Ingen data funnet for ukenummer: ${ukenummer}`
+        data = JSON.parse(jsonData)
     } catch (error) {
         console.error('Feil ved lesing av filen:', error)
         throw error
     }
+
+    const resultat = data.find((uke) => uke.ukenummer === ukenummer)
+    if (!resultat) {
+        throw new Error(`Ingen data funnet for ukenummer: ${ukenummer}`)
+    }
+    return resultat
 }
 
 export function hentAnsvarligFraFil(ansvar: AnsvarType, uke?: number): Flexer {

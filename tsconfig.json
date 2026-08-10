@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
+        "rootDir": "./src",
         "module": "esnext",
         "target": "es2017",
         "moduleResolution": "bundler",
