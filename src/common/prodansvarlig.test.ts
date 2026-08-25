@@ -83,7 +83,13 @@ describe('prodansvarlig Funksjon', () => {
         expect(data[2].ansvarlig).toEqual(prodansvarlige[2])
         expect(data[3].ansvarlig).toEqual(prodansvarlige[2])
 
+        expect(data[4].ansvarlig).toEqual(prodansvarlige[3])
+        expect(data[5].ansvarlig).toEqual(prodansvarlige[3])
+
+        expect(data[6].ansvarlig).toEqual(prodansvarlige[4])
+        expect(data[7].ansvarlig).toEqual(prodansvarlige[4])
+
         const nestePerson = prodansvarlige[0]
-        expect(data[4].ansvarlig).toEqual(nestePerson)
+        expect(data[8].ansvarlig).toEqual(nestePerson)
     })
 })
