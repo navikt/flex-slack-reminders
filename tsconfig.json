@@ -9,6 +9,6 @@
         "forceConsistentCasingInFileNames": true,
         "noImplicitReturns": true,
         "strict": true,
-        "types": ["vitest"]
+        "types": ["node", "vitest"]
     }
 }
