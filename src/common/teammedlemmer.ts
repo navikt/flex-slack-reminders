@@ -8,6 +8,7 @@ export interface Flexer {
 }
 
 export const alleFlexere: Flexer[] = [
+    { initialer: 'IM', memberId: 'U0C256PQFRC', flexjar: true, retro: true, bursdag: '03-24' },
     { initialer: 'MHJ', memberId: 'U01CX9M44MS', flexjar: true, retro: true, bursdag: '08-19' },
     { initialer: 'TM', memberId: 'U06QFQVELJF', flexjar: true, retro: true, bursdag: '03-16' },
     { initialer: 'NJM', memberId: 'U02AM04QV96', prodansvar: true, flexjar: true, retro: true, bursdag: '01-05' },
